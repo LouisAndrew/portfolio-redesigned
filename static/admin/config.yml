@@ -1,0 +1,88 @@
+backend: 
+  name: git-gateway
+  branch: master
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files: 
+      - file: "src/components/social.md"
+        label: "Social Links"
+        name: "social"
+        fields: 
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "social"} 
+          - { label: "List of Social Links", name: "socialLinks", widget: list, fields: [{ label: "Social Media Image", name: image, widget: image }, { label: "Social Media Link", name: link, widget: string }] }
+     
+      - file: "src/components/theme.md"
+        label: "Site Theme"
+        name: "theme"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "theme" }
+          - { label: "Site's Theme Colors", name: "themeColors", widget: list, fields: [{ label: "color ID", name: colorID, widget: string }, { label: "Color Value in Hexadecimal", name: colorHex, widget: string }] }
+
+  - name: 'technologies'
+    label: 'Technologies'
+    folder: "src/components/techs"
+    create: true
+    fields: 
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "techs" }
+      - { label: "Tech ID", name: title, type: string }
+      - { label: "Technology Name", name: "name", widget: string }
+      - { label: "Tech Icon", name: icon, widget: image }
+
+  - name: "project"
+    folder: "src/components/projects"
+    label: "Projects"
+    create: true
+    fields: 
+    - { label: "Template Key", name: "templateKey", widget: "hidden", default: "projects" }
+    - { label: "Project ID", name: title, type: string }
+    - { label: "Project Name", name: "projectName", widget: string }
+    - { label: "Last Updated", name: 'lastUpdated', widget: date }
+    - { label: "Git Repository Link", name: "gitRepo", widget: string }
+    - { label: "Project's site", name: 'siteName', widget: string }
+    - { label: "Project Snapshot", name: snapshot, widget: image }
+    - { label: "Technology Used", name: "techUsed", widget: list, field: { label: Techs, name: techs, widget: relation, collection: "technologies", searchFields: ['name'], valueField: "name", displayFields: ["name", "icon"] } }
+    - { label: Description, name: desc, widget: string }    
+
+  - name: "blogs"
+    folder: "src/components/blogs"
+    label: "Blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: 
+    - { label: "Template Key", name: "templateKey", widget: hidden, default: "blogs" }
+    - { label: Title, name: title, widget: string }
+    - { label: Slug, name: slug, widget: string }
+    - { label: "Created At", name: createdAt, widget: datetime }
+    - { label: "Blog post Content", name: body, widget: markdown }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields: 
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index" }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: "Call To Action", name: cta, widget: string }
+          # - { label: "Introduction", name: intro, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Description, name: desc, widget: string }, { label: Image, name: image, widget: image }] }
+          - { label: "Expertees", name: expertees, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: "My expertees", name: "myExpertees", widget: list, fields: [{ label: Heading, name: heading, widget: string }, { label: Description, name: desc, widget: string }, { label: Image, name: image, widget: image }] }] }
+          - { label: Contacts, name: contact, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Subheading, name: subheading, widget: string }, { label: "Contact Lists", name: "contactLists", widget: list, fields: [{ label: Social, name: social, widget: string }, { label: Value, name: value, widget: string }, { label: Link, name: link, widget: string }, { label: Redirect, name: redirect, widget: boolean }] }] }
+
+        - file: "src/pages/about.md"
+          label: "About Page"
+          name: "about"
+          fields: 
+            - { label: "Template Key", name: "templateKey", widget: hidden, default: about }
+            - { label: Title, name: title, widget: string }
+            - { label: Image, name: image, widget: image }
+            - { label: Heading, name: heading, widget: image }
+            - { label: Subheading, name: subheading, widget: string }
