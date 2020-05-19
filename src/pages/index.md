@@ -22,9 +22,11 @@ contact:
       value: louisandrew3@gmail.com
       link: "-"
       redirect: false
+      icon: assets/alternate_email-24px-1.svg
     - social: phone
       value: +49 - 1786520738
       link: " "
       redirect: false
+      icon: assets/call-24px-1.svg
   subheading: " "
 ---
