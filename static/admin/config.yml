@@ -69,13 +69,13 @@ collections:
         fields: 
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index" }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
+          # - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
           - { label: "Call To Action", name: cta, widget: string }
           # - { label: "Introduction", name: intro, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Description, name: desc, widget: string }, { label: Image, name: image, widget: image }] }
           - { label: "Expertees", name: expertees, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: "My expertees", name: "myExpertees", widget: list, fields: [{ label: Heading, name: heading, widget: string }, { label: Description, name: desc, widget: string }, { label: Image, name: image, widget: image }] }] }
-          - { label: Contacts, name: contact, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Subheading, name: subheading, widget: string }, { label: "Contact Lists", name: "contactLists", widget: list, fields: [{ label: Social, name: social, widget: string }, { label: Value, name: value, widget: string }, { label: Link, name: link, widget: string }, { label: Redirect, name: redirect, widget: boolean }] }] }
+          - { label: Contacts, name: contact, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Subheading, name: subheading, widget: string }, { label: "Contact Lists", name: "contactLists", widget: list, fields: [{ label: Social, name: social, widget: string }, { label: Value, name: value, widget: string }, { label: Icon, name: icon, widget: image }] }] }
 
       - file: "src/pages/about.md"
         label: "About Page"
