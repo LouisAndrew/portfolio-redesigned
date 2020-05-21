@@ -42,7 +42,7 @@ const Container = styled.section`
 const Items = styled.div`
         
         width: 50%;
-        padding-right: 5%;
+        /* padding-right: 5%; */
 
         z-index: 2;
         display: flex;
@@ -55,15 +55,27 @@ const Items = styled.div`
                 align-items: center;
         }
 
+        p {
+                margin: 10% 0 5%;
+        }
+
+        #hooman {
+                width: 80%;
+        }
+
         @media screen and ( max-width: 464px ) {
                 
                 width: 100%;
-                padding-right: 0;
+                /* padding-right: 0; */
 
                 align-items: center;
 
                 h1, p {
                         text-align: center;
+                }
+
+                p {
+                        padding: 0 2%;
                 }
         }
 `

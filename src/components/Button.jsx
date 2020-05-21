@@ -47,6 +47,11 @@ const Butt = styled.button`
                                 return props.$color
                 }
         }};
+
+        @media screen and ( orientation: portrait ) {
+
+                padding: 1vw 2vw;
+        }
 `
 
 const Button = props => {

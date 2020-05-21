@@ -82,6 +82,13 @@ const Layout = ({ children }) => {
                         padding: 8%;
                 }
 
+                @media screen and ( max-width: 1440px ) {
+                        
+                        p, button, a {
+                                font-size: 1.6vw;
+                        }
+                }
+
                 @media screen and ( max-width: 464px ) {
                         
                         h1 {
@@ -95,10 +102,14 @@ const Layout = ({ children }) => {
                         h3 {
                                 font-size: 24px;
                         }
-
+/* 
                         p, a, button {
                                 font-size: 16px;
-                        } 
+                        }  */
+
+                        p, a, button {
+                                font-size: 3.5vw;
+                        }
                 }
         `
 
