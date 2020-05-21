@@ -1,4 +1,5 @@
 ---
+templateKey: theme
 themeColors:
   - colorID: bg
     colorHex: "#191919"

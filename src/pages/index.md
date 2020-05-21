@@ -1,4 +1,5 @@
 ---
+templateKey: index
 title: Portfolio Site!
 image: assets/whh_design.svg
 heading: Heyy! 🤙️
