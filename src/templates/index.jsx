@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Hero from '../components/index-page/Hero'
+import Hero from '../components/index-page/hero'
 import Layout from '../components/layout'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact }) => (
@@ -14,7 +14,6 @@ export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, 
 const IndexPage = ({ data: result }) => {
 
       const  data = result.markdownRemark.frontmatter
-      console.log(data)
 
       return <IndexPageTemplate {...data}  />
 }

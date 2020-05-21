@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
                 }
 
                 p {
-                        font-size: 24px;
+                        font-size: 22px;
                         font-family: 'Open Sans', sans-serif;
                 }
 
