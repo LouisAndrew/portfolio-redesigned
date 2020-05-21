@@ -4,10 +4,12 @@ import PropTypes from 'prop-types'
 
 import Hero from '../components/index-page/hero'
 import Layout from '../components/layout'
+import Expertees from '../components/index-page/expertees'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact }) => (
       <Layout>
             <Hero heading={heading} subheading={subheading} cta={cta} />
+            <Expertees {...expertees} />
       </Layout>
 )
 

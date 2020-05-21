@@ -40,6 +40,7 @@ const useImages = relativePath => {
         if ( !image.node ) {
 
             const temp = result && filterSharpImages(result.allFile.edges)
+
             const filtered = filter(relativePath, temp)
 
             setImage( filtered.length > 0 ? filtered[0] : false )

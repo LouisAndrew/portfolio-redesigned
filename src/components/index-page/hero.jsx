@@ -18,6 +18,7 @@ const Container = styled.section`
 
                 position: absolute;
                 right: 0;
+                z-index: 1;
         }
 
         @media screen and ( max-width: 464px ) {
@@ -28,8 +29,7 @@ const Container = styled.section`
 
                 #laser {
 
-                        transform: scale(.7);
-                        right: -7%;
+                        transform: scale(.7) translateX(30%);
                 }
 
                 #hooman {
