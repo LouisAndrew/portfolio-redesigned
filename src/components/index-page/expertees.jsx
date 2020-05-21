@@ -53,7 +53,7 @@ const Content = styled.div`
 
         @media screen and ( max-width: 840px ) {
                 
-                flex-direction: column-reverse;
+                flex-direction: column;
         }
 `
 
@@ -62,7 +62,9 @@ const Item = styled.div`
         width: 50%;
         padding: 5%;
 
-        ${({ theme }) => theme.center()};
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
         flex-direction: column;
 
         &:last-child {
@@ -73,10 +75,10 @@ const Item = styled.div`
         @media screen and ( max-width: 840px ) {
 
                 width: 100%;
+                align-items: center;
 
-                &:last-child {
+                &:first-child {
 
-                        align-items: center;
                         padding-top: 15%;
                 }
         }
@@ -89,18 +91,16 @@ const ExpItem = styled.div`
 
         display: flex;
         align-items: center;
-        justify-content: flex-end;
 
         img {
                 
-                margin-left: 5vw;
+                margin-right: 5vw;
                 height: 150px;
                 width: 150px;
         }       
 
         @media screen and ( max-width: 840px ) {
 
-                flex-direction: row-reverse;
                 justify-content: center;
 
                 margin: 10% 0;
@@ -137,11 +137,6 @@ const Expertees = ({ heading, myExpertees }) => {
                 <Container className='wrap'>
                         <Content>
                                 <Item>
-                                        {
-                                                myExpertees.map( (expertee, i) => <ExperteeItem key={i} {...expertee} /> )
-                                        }
-                                </Item>
-                                <Item>
                                         <h1>{splittedHeading[0]}</h1>
                                         <h1>
                                                 {
@@ -149,6 +144,11 @@ const Expertees = ({ heading, myExpertees }) => {
                                                                 .split( splittedHeading[0] )[1]
                                                 }
                                         </h1>
+                                </Item>
+                                <Item>
+                                        {
+                                                myExpertees.map( (expertee, i) => <ExperteeItem key={i} {...expertee} /> )
+                                        }
                                 </Item>
                         </Content>
                         <Circular id='circular' />
@@ -160,11 +160,11 @@ const ExperteeItem = ({ desc, heading, image }) => {
 
         return (
                 <ExpItem>
+                        <img src={image} alt={heading} />
                         <div>
                                 <h3>{heading}</h3>
                                 <p>{desc}</p>
                         </div>
-                        <img src={image} alt={heading} />
                 </ExpItem>
         )
 }
