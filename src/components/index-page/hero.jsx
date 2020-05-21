@@ -92,6 +92,7 @@ const Hero = ({ heading, subheading, cta }) => {
                                 </Button>
                         </Items>
                         <Items>
+                                {/* standing human svg!! */}
                                 <Hooman id='hooman' />
                         </Items>
                         <Laser id='laser' />

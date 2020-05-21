@@ -92,8 +92,11 @@ const ExpItem = styled.div`
         justify-content: flex-end;
 
         img {
+                
                 margin-left: 5vw;
-        }
+                height: 150px;
+                width: 150px;
+        }       
 
         @media screen and ( max-width: 840px ) {
 
@@ -127,6 +130,9 @@ const ExpItem = styled.div`
 
 const Expertees = ({ heading, myExpertees }) => {
 
+        // dunno if this is necessary, could just hard code them..
+        const splittedHeading = heading.split(' ')
+
         return (
                 <Container className='wrap'>
                         <Content>
@@ -136,8 +142,13 @@ const Expertees = ({ heading, myExpertees }) => {
                                         }
                                 </Item>
                                 <Item>
-                                        <h1>Things</h1>
-                                        <h1>I Do</h1>
+                                        <h1>{splittedHeading[0]}</h1>
+                                        <h1>
+                                                {
+                                                        heading
+                                                                .split( splittedHeading[0] )[1]
+                                                }
+                                        </h1>
                                 </Item>
                         </Content>
                         <Circular id='circular' />
