@@ -5,15 +5,15 @@ const { createFilePath } = require('gatsby-source-filesystem')
 exports.onCreateNode = ({ node, getNode, actions }) => {
 
     const { createNodeField } = actions
-    //for every markdown node
+    // for every markdown node
     if ( node.internal.type === 'MarkdownRemark' ) {
 
         const fileNode = getNode(node.parent)
-        const relativePath = fileNode.relativePath
+        const { relativePath } = fileNode
 
         const templateId = relativePath.indexOf('/') === -1 ? relativePath.split('.md')[0] : relativePath.split('/')[0]
 
-        //create path based on slug provided!
+        // create path based on slug provided!
         const slug = createFilePath({ node, getNode, basePath: 'pages' })
         if ( !slug.includes('techs/') && !slug.includes('social') ) {
 

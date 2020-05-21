@@ -6,11 +6,13 @@ import Hero from '../components/index-page/hero'
 import Layout from '../components/layout'
 import Expertees from '../components/index-page/expertees'
 import Contact from '../components/index-page/contact'
+import ProjectShowcase from '../components/index-page/projects-index'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact }) => (
       <Layout>
             <Hero heading={heading} subheading={subheading} cta={cta} />
             <Expertees {...expertees} />
+            <ProjectShowcase />
             <Contact {...contact} />
       </Layout>
 )

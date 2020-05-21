@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.section`
         
@@ -83,8 +84,6 @@ const Contact = ({ contactLists, heading, subheading }) => {
         const splittedHeading = heading.split(' ')
         const splitLength = splittedHeading.length - 1
 
-        console.log(contactLists)
-
         return (
                 <Container className='wrap'>
                         <Heading>
@@ -117,6 +116,36 @@ const ContactItem = ({ icon, social, link, value, redirect }) => {
                         { item }
                 </CtItem>
         )
+}
+
+Contact.propTypes = {
+        
+        contactLists: PropTypes.arrayOf(
+                PropTypes.shape({
+                        icon: PropTypes.string.isRequired,
+                        social: PropTypes.string,
+                        link: PropTypes.string,
+                        value: PropTypes.string.isRequired,
+                        redirect: PropTypes.bool
+                }),
+        ),
+        heading: PropTypes.string.isRequired,
+        subheading: PropTypes.string,
+}
+
+Contact.defaultProps = {
+
+        contactLists: [],
+        subheading: '',
+}
+
+ContactItem.propTypes = {
+
+        icon: PropTypes.string.isRequired,
+        social: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+        redirect: PropTypes.bool.isRequired
 }
 
 export default Contact
