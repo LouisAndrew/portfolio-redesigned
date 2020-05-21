@@ -58,7 +58,7 @@ const Button = props => {
 
         return (
                 // eslint-disable-next-line react/destructuring-assignment
-                <Butt {...props} $bColor={props.bColor} $color={props.color} >
+                <Butt {...props} $bColor={props.bColor} $color={props.color} data-testid='button'>
                         {
                                 // eslint-disable-next-line react/destructuring-assignment
                                 props.children

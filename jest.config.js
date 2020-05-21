@@ -1,4 +1,5 @@
-Copyjest.config.js: copy code to clipboard
+// Copyjest.config.js: copy code to clipboard
+
 module.exports = {
       transform: {
             "^.+\\.jsx?$": `<rootDir>/jest-preprocess.js`,

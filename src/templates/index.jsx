@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Hero from '../components/index-page/Hero'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact }) => (
       <Layout>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import Laser from '../../../static/assets/decorations/LaserBeam.svg'
 import Hooman from '../../../static/assets/decorations/Hooman.svg'
-import Button from '../Button'
+import Button from '../button'
 
 const Container = styled.section`
         
