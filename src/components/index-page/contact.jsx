@@ -7,16 +7,24 @@ const Container = styled.section`
         background-color: ${({ theme }) => theme.bg};
         display: flex;
 
+        & > div {
+                width: 50%;
+        }
+
         @media screen and ( max-width: 464px ) {
                 
                 flex-direction: column;
+
+                & > div {
+                        width: 100%;
+                }
         }
 `
 
 const Heading = styled.div`
         
         border-right: 3px solid ${({ theme }) => theme.ft};
-        padding-right: 5%;
+        /* padding-right: 5%; */
 
         @media screen and ( max-width: 464px ) {
 

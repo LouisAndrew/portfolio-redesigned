@@ -17,6 +17,8 @@ const Container = styled.section`
                 bottom: -15%;
                 left: 0;
 
+                transform: scale(.8) translateX(-20%);
+
                 @media screen and ( max-width: 1440px ) {
                         
                         bottom: -20%;
@@ -45,11 +47,12 @@ const Content = styled.div`
         width: 100%;
         border-radius: 8px;
         padding: 5%;
+        position: relative;
 
         display: flex;
         
         background-color: ${({ theme }) => theme.dark};
-        z-index: 2;
+        z-index: 3;
 
         @media screen and ( max-width: 840px ) {
                 

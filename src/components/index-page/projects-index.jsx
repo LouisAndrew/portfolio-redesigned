@@ -24,6 +24,8 @@ const Container = styled.div`
 
                         align-items: flex-start;
                         justify-content: flex-start;
+                        
+                        z-index: 3;
                 }
 
                 &.projs {
@@ -44,6 +46,10 @@ const Container = styled.div`
 
                                 align-items: center;
                         }
+
+                        &.projs {
+                                padding-top: 10%;
+                        }
                 }
         }
 `
@@ -56,11 +62,17 @@ const Projects = styled.div`
         flex-flow: row wrap;
         align-items: flex-start;
         justify-content: space-between;
+
+        @media screen and ( max-width: 464px ) {
+
+                flex-direction: column;
+                align-items: center;
+        }
 `
 
 const ProjectItem = styled.div`
         
-        width: 45% !important;
+        width: 45%;
         margin-bottom: 10%;
         position: relative;
 
@@ -109,6 +121,19 @@ const ProjectItem = styled.div`
 
                 h3 {
                         opacity: 1;
+                }
+        }
+
+        @media screen and ( max-width: 464px ) {
+                
+                width: 90%;
+
+                h3 {
+                        opacity: 1;
+                }
+
+                &::after {
+                        height: 100%;
                 }
         }
 `
