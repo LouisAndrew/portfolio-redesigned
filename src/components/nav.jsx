@@ -59,7 +59,7 @@ const LinkWr = styled.ul`
         @media screen and ( max-width: 464px ) {
                 
                 position: absolute;
-                bottom: -380%;
+                bottom: -400%;
                 right: 8%;
                 /* transform: translateX(8%); */
                 border-radius: 3px;
