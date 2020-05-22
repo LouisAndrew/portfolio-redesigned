@@ -18,9 +18,13 @@ const Container = styled.section`
                 margin-top: 5%;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 840px ) {
                 
                 padding-top: 20%;
+        }
+
+        @media screen and ( max-width: 464px ) {
+                
                 ${({ theme }) => theme.center()};
                 flex-direction: column;
 
@@ -69,6 +73,10 @@ const ProjectImage = styled.div`
                 }
         }
 
+        h3 {
+                margin: 2% 0;
+        }
+
         #top {
 
                 position: absolute;
@@ -83,12 +91,37 @@ const ProjectImage = styled.div`
                 right: -3%;
         }
 
+        @media screen and ( max-width: 840px ) {
+
+                margin: 15% 0;
+
+                h3 {
+                        margin: 5% 0;
+                }
+
+                #top {
+                        transform: scale(.8) translate(-15%, -10%);
+                }
+
+                #bot {
+                        transform: scale(.8) translate(15%, 15%);
+                }
+        }
+
         @media screen and ( max-width: 464px ) {
 
                 margin: 15% 0;
 
+                h3 {
+                        margin: 5% 0;
+                }
+
                 #top {
-                        transform: scale(.7) translate(0, -30%);
+                        transform: scale(.6) translate(-40%, -40%);
+                }
+
+                #bot {
+                        transform: scale(.6) translate(40%, 40%);
                 }
         }
 `
