@@ -93,7 +93,7 @@ const Contact = ({ contactLists, heading, subheading }) => {
         const splitLength = splittedHeading.length - 1
 
         return (
-                <Container className='wrap'>
+                <Container id='contact' className='wrap'>
                         <Heading>
                                 <h1>
                                         {

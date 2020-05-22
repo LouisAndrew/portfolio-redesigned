@@ -44,7 +44,7 @@ const LinkWr = styled.ul`
 
                 ${({ theme }) => theme.center()};
 
-                padding: 1vh 2vh;
+                padding: 1vh 3vh;
                 border-bottom: 2px solid ${({ theme }) => theme.bg};
 
                 text-decoration: none;
@@ -100,22 +100,22 @@ const Nav = () => {
 const Links = props => (
         <LinkWr {...props}>
                 <li>
-                        <Link href='/#hero'>
+                        <Link to='/#hero'>
                                 Home
                         </Link>
                 </li>
                 <li>
-                        <Link href='/projects'>
+                        <Link to='/projects'>
                                 Projects
                         </Link>
                 </li>
                 <li>
-                        <Link href='/#hero'>
+                        <Link to='/#hero'>
                                 About
                         </Link>
                 </li>
                 <li>
-                        <Link href='/#hero'>
+                        <Link to='/#contact'>
                                 Contact
                         </Link>
                 </li>

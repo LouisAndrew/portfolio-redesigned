@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { useNavigate } from '@reach/router'
 
 import Laser from '../../../static/assets/decorations/LaserBeam.svg'
 import Hooman from '../../../static/assets/decorations/Hooman.svg'
@@ -85,12 +86,14 @@ const Items = styled.div`
 
 const Hero = ({ heading, subheading, cta }) => {
 
+        const navigate = useNavigate()
+
         return (
-                <Container className='wrap'>
+                <Container id='hero' className='wrap'>
                         <Items>
                                 <h1>{heading}</h1>
                                 <p>{subheading}</p>
-                                <Button color='ft' bColor='red' >
+                                <Button color='ft' bColor='red' onClick={() => navigate('/projects')}>
                                         {cta}
                                 </Button>
                         </Items>

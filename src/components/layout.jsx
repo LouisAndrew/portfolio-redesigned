@@ -48,6 +48,10 @@ const Layout = ({ children }) => {
                         box-sizing: border-box;
                 }
 
+                html {
+                        scroll-behavior: smooth;
+                }
+
                 h1 {
                         font-size: 100px;
                         font-family: 'Roboto', sans-serif;
