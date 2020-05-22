@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Tech = props => {
-          
-           return (
-                    <div>
+        
+        return (
+                <div>
                               
-                    </div>
-          ) 
+                </div>
+        ) 
 }
 
 export default Tech

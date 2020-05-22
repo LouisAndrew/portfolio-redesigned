@@ -2,11 +2,10 @@
 
 exports[`matches snapshot 1`] = `
 <button
-  className="sc-AxjAm goWAqg"
+  className="sc-AxjAm hNoFXg"
   color="def"
   data-testid="button"
 >
-  Hey
   Test
 </button>
 `;
