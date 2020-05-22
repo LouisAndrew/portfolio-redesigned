@@ -48,6 +48,10 @@ const Butt = styled.button`
                 }
         }};
 
+        &:hover {
+                cursor: pointer;
+        }
+
         @media screen and ( orientation: portrait ) {
 
                 padding: 1vw 2vw;

@@ -43,8 +43,9 @@ const Items = styled.div`
         
         width: 50%;
         /* padding-right: 5%; */
-
+        position: relative;
         z-index: 2;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -72,6 +73,8 @@ const Items = styled.div`
 
                 h1, p {
                         text-align: center;
+                        z-index: 2;
+                        position: relative;
                 }
 
                 p {

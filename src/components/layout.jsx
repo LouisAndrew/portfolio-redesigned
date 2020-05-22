@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import useGoogleFonts from '../hooks/useGoogleFonts'
+import Nav from './nav'
 
 const Layout = ({ children }) => {
 
@@ -94,6 +95,10 @@ const Layout = ({ children }) => {
                         h1 {
                                 font-size: 90px;
                         }
+
+                        .wrap:not(:first-child) {
+                                margin-top: -1%;
+                        }
                 }
 
                 @media screen and ( max-width: 464px ) {
@@ -127,6 +132,7 @@ const Layout = ({ children }) => {
                         <Global />
                         <ThemeProvider theme={theme}>
                                 <main>
+                                        <Nav />
                                         { children }
                                 </main>
                         </ThemeProvider>
