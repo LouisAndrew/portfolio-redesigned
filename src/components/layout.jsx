@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
                 }
 
                 button, a {
-                        font-size: 24px;
+                        font-size: 18px;
                         font-weight: bold;
                         font-family: 'Open Sans', sans-serif;
                 }
@@ -101,7 +101,12 @@ const Layout = ({ children }) => {
 
                 .wrap {
 
-                        padding: 8%;
+                        padding: 8% 12%;
+
+                        @media screen and ( min-width: 1440px ) {
+                                
+                                padding: 8% calc( (100vw - 1200px) / 2 );
+                        }
                 }
 
                 @media screen and ( max-width: 1440px ) {

@@ -25,6 +25,8 @@ const Container = styled.section`
 
         @media screen and ( max-width: 464px ) {
                 
+                padding-top: 20%;
+
                 ${({ theme }) => theme.center()};
                 flex-direction: column;
 
@@ -80,15 +82,17 @@ const ProjectImage = styled.div`
         #top {
 
                 position: absolute;
+                transform: scale(.9);
                 top: -6%;
-                left: -3%;
+                left: -4%;
         }
 
         #bot {
 
                 position: absolute;
+                transform: scale(.9);
                 bottom: -6%;
-                right: -3%;
+                right: -4%;
         }
 
         @media screen and ( max-width: 840px ) {
