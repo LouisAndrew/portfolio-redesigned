@@ -50,6 +50,23 @@ const Layout = ({ children }) => {
 
                 html {
                         scroll-behavior: smooth;
+
+                        &::-webkit-scrollbar {
+                                width: 8px;
+                                padding: 0 2px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                                background-color: ${ theme.bg };
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+
+                                width: 80%;
+                                background-color: ${ theme.dark };
+                                border-radius: 8px;
+                                opacity: .6;
+                        }
                 }
 
                 h1 {
