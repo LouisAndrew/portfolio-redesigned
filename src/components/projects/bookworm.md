@@ -3,7 +3,7 @@ templateKey: projects
 title: BOOKWORM
 projectName: Bookworm
 lastUpdated: 2020-05-21T19:05:12.715Z
-gitRepo: https://github.com/LouisAndrew/Bookworm
+gitRepo: github.com/LouisAndrew/Bookworm
 siteName: bookworm.now.sh
 snapshot: assets/2020-05-21-2-.png
 techUsed:
