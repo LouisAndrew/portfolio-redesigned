@@ -19,25 +19,20 @@ const Container = styled.div`
         .carousel-wrapper {
 
                 width: 100%;
-                /* min-height: 50vh;
-                max-height: 100vh; */
-                /* height: 100%; */
 
                 height: fit-content;
                 position: relative;
 
+                overflow: hidden;
+
+                display: flex;
+
                 .carousel-img {
-                        width: 100%;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
+
+                        min-width: 100%;
 
                         z-index: 1;
-
-                        &.active {
-                                z-index: 2;
-                                position: relative;
-                        }
+                        transition: .2s;
                 }
         }
 
@@ -50,12 +45,16 @@ const Container = styled.div`
                 z-index: 3;   
                 fill: #fff;
         }
+
+        .nav {
+
+                &:hover {
+                        cursor: pointer;
+                }
+        }
 `
 
 const Carousel = ({ snapshots }) => {
-
-        const [ leftToRight, setLeftToRight ] = useState(false)
-        const [ rightToLeft, setRightToLeft ] = useState(false)
 
         const [ inDisplay, setInDisplay ] = useState(0)
         const [ length, setLength ] = useState( snapshots.length )
@@ -65,7 +64,6 @@ const Carousel = ({ snapshots }) => {
                 const nextIndex = inDisplay + 1 > length - 1 ? 0 : inDisplay + 1
 
                 setInDisplay(nextIndex)
-                setLeftToRight(true)
         }
 
         const prev = () => {
@@ -73,76 +71,32 @@ const Carousel = ({ snapshots }) => {
                 const nextIndex = inDisplay === 0 ? length - 1 : inDisplay - 1
                 
                 setInDisplay(nextIndex)
-                setRightToLeft(true)
         }
 
-        const getCarouselImgByIndex = inDisplayIndex => {
-
-                if ( inDisplay >= length ) return null
+        const setDisplay = index => {
 
                 const array = Array.from( document.querySelectorAll('.carousel-img') )
 
-                console.log(array)
-
-                const disp = array.filter( node => node.getAttribute('value') === inDisplayIndex.toString() )[0]
-
-                return disp
-        }       
-
-        const setActive = () => {
-
-                const active = getCarouselImgByIndex(inDisplay)
-
-                console.log(active)
-                if ( active && !active.classList.contains('active') )
-                        active.classList.add('active')
+                array.forEach( el => {
+                        // eslint-disable-next-line no-param-reassign
+                        el.style.transform = `translateX(-${ index * 100 }%)`
+                } )
         }
 
         useEffect(() => {
-                setActive()
-        })
 
-        useEffect(() => {
-
-                if ( leftToRight ) {
-
-                        const prevIndex = inDisplay === 0 ? length - 1 : inDisplay - 1
-                        const prevImg = getCarouselImgByIndex(prevIndex)
-
-                        if ( prevImg && prevImg.classList.contains('active') )
-                                prevImg.classList.remove('active')
-
-                        setActive()
-
-                        setLeftToRight(false)
-                }
-        }, [ inDisplay, leftToRight ])
-
-        useEffect(() => {
-
-                if ( rightToLeft ) {
-
-                        const prevIndex = inDisplay === length - 1 ? 0 : inDisplay + 1
-                        const prevImg = getCarouselImgByIndex(prevIndex)
-
-                        if ( prevImg && prevImg.classList.contains('active') )
-                                prevImg.classList.remove('active')
-
-                        setActive()
-
-                        setLeftToRight(false)
-                }
-        }, [ inDisplay, rightToLeft ])
+                setDisplay(inDisplay)
+        }, [inDisplay])
 
         return (
                 <Container>
-                        <Back id='back' onClick={prev} />
-                        <div className='carousel-wrapper'>
+                        <Back className='nav' id='back' onClick={prev} />
+                        <div id='car-wrapper' className='carousel-wrapper'>
                                 {
                                         snapshots.map( (snapshot, i) => <CarouselImg value={i} key={i} image={snapshot} /> )
                                 }
                         </div>
-                        <Forward id='forward' onClick={next} />
+                        <Forward className='nav' id='forward' onClick={next} />
                 </Container>
         )
 }
