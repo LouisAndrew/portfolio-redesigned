@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import useImages from '../../hooks/useImages'
 import Github from '../../../static/assets/github_icon.svg'
 import Web from '../../../static/assets/web_icon.svg'
+import Tech from '../techs/tech'
 import Button from '../button'
 import Top from '../../../static/assets/decorations/ProjectTop.svg'
 import Bot from '../../../static/assets/decorations/ProjectBot.svg'
@@ -33,6 +34,10 @@ const Container = styled.section`
                 h1 {
                         margin-bottom: 5%;
                 }
+
+                p:last-child {
+                        text-align: center;
+                }
         }
 `
 
@@ -56,7 +61,7 @@ const ButtonsWr = styled.div`
 
 const ProjectImage = styled.div`
         
-        margin: 8% 0;
+        margin: 12% 0;
         padding: 5%;
         border-radius: 8px;
         width: 100%;
@@ -82,17 +87,23 @@ const ProjectImage = styled.div`
         #top {
 
                 position: absolute;
-                transform: scale(.9);
+                transform: scale(.9) translateY(10%);
                 top: -6%;
                 left: -4%;
+
+                @media screen and ( max-width: 1100px ) {
+                        
+                        left: -5%;
+                }
         }
 
         #bot {
 
                 position: absolute;
-                transform: scale(.9);
+                transform: scale(.9) translateY(-10%);
                 bottom: -6%;
                 right: -4%;
+
         }
 
         @media screen and ( max-width: 840px ) {
@@ -133,7 +144,9 @@ const ProjectImage = styled.div`
 const Techs = styled.div`
         
         width: 100%;
-        background-color: red;
+
+        display: flex;
+        flex-flow: row wrap;
 `
 
 const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, siteName: siteUnformatted, snapshot, techUsed }) => {
@@ -142,6 +155,7 @@ const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, sit
         // just asafe guard in case no http:// is added on cms.
         const httpAdder = str => str.includes('http://' || 'https://') ? str : `http://${str}`
 
+        // split snapshot => if snapshot contains assets. => for useImages hooks.
         const assetSplitter = str => str.includes('assets/') && str.split('assets/')[1]
 
         const gitRepo = httpAdder(repoUnformatted)
@@ -153,7 +167,7 @@ const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, sit
         const visitSite = e =>{
 
                 if ( e.target.value )
-                        window.location = e.target.value
+                        window.open( e.target.value, '_blank' )
         }
 
         return (
@@ -182,6 +196,9 @@ const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, sit
                                 }
                                 <h3>Techs Used:</h3>
                                 <Techs>
+                                        {
+                                                techUsed.map( (techName, i) => <Tech key={i} techName={techName} /> )
+                                        }
                                 </Techs>
                                 <Bot id='bot' />
                         </ProjectImage>

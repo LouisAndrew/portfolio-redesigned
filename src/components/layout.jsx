@@ -102,6 +102,10 @@ const Layout = ({ children }) => {
                 .wrap {
 
                         padding: 8% 12%;
+                        
+                        &:not(:first-child) {
+                                margin-top: -1%;
+                        }
 
                         @media screen and ( min-width: 1440px ) {
                                 
@@ -110,21 +114,18 @@ const Layout = ({ children }) => {
                 }
 
                 @media screen and ( max-width: 1440px ) {
-                        
+
                         p, button, a {
                                 font-size: 1.6vw;
                         }
                 }
 
-                @media screen and ( max-width: 840px ) {
+                @media screen and ( max-width: 1100px ) {
                         
                         h1 {
                                 font-size: 90px;
                         }
 
-                        .wrap:not(:first-child) {
-                                margin-top: -1%;
-                        }
                 }
 
                 @media screen and ( max-width: 464px ) {
