@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import CarouselImg from './carousel-image'
-import Back from '../../../static/assets/back.svg'
-import Forward from '../../../static/assets/forward.svg'
+import Back from '../../../../static/assets/back.svg'
+import Forward from '../../../../static/assets/forward.svg'
+import CarouselPagin from './carousel-pagination'
 
 const Container = styled.div`
         
@@ -95,6 +96,11 @@ const Carousel = ({ snapshots }) => {
                                 {
                                         snapshots.map( (snapshot, i) => <CarouselImg value={i} key={i} image={snapshot} /> )
                                 }
+                                <div className='pagin-wrapper'>
+                                        {
+                                                [...Array(length).keys()].map( key => <CarouselPagin  /> )
+                                        }
+                                </div>
                         </div>
                         <Forward className='nav' id='forward' onClick={next} />
                 </Container>

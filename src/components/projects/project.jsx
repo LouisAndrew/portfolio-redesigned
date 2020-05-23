@@ -89,7 +89,7 @@ const ProjectImage = styled.div`
 
                 position: absolute;
                 transform: scale(.9) translateY(10%);
-                top: -6%;
+                top: -4%;
                 left: -4%;
 
                 @media screen and ( max-width: 1100px ) {
@@ -102,7 +102,7 @@ const ProjectImage = styled.div`
 
                 position: absolute;
                 transform: scale(.9) translateY(-10%);
-                bottom: -6%;
+                bottom: -4%;
                 right: -4%;
 
         }

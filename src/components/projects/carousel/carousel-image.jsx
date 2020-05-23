@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
-import useImages from '../../hooks/useImages'
+import useImages from '../../../hooks/useImages'
 
 const CarouselImg = ({ image, value }) => {
 
