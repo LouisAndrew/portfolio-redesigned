@@ -3,8 +3,8 @@ templateKey: projects
 title: ROXSTOK
 projectName: Roxstok
 lastUpdated: 2020-05-21T19:08:13.399Z
-gitRepo: https://github.com/LouisAndrew/roxstok-app
-siteName: https://louisandrew.github.io/roxstok-app/
+gitRepo: github.com/LouisAndrew/roxstok-app
+siteName: louisandrew.github.io/roxstok-app/
 snapshot: assets/2020-05-21-4-.png
 techUsed:
   - HTML5
