@@ -5,7 +5,12 @@ projectName: Pong
 lastUpdated: 2020-05-19T21:07:52.008Z
 gitRepo: github.com/LouisAndrew/Pong
 siteName: pong-eta.now.sh
-snapshot: assets/screenshot-2-.png
+preview:
+  - assets/2020-05-23-7-.png
+  - assets/2020-05-23-8-.png
+  - assets/2020-05-23-9-.png
+snapshot: assets/2020-05-23-5-.png
+projColor: "#ff0000"
 techUsed:
   - HTML5
   - Javascript
