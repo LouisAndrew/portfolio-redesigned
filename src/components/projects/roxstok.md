@@ -5,7 +5,10 @@ projectName: Roxstok
 lastUpdated: 2020-05-21T19:08:13.399Z
 gitRepo: github.com/LouisAndrew/roxstok-app
 siteName: louisandrew.github.io/roxstok-app/
-snapshot: assets/2020-05-21-4-.png
+preview:
+  - assets/2020-05-21-4-.png
+snapshot: assets/2020-05-23-4-.png
+projColor: "#00ff00"
 techUsed:
   - HTML5
   - Javascript
