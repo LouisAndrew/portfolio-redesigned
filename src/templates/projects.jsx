@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 import Project from '../components/projects/project'
 
-export const ProjectPageTemplate = ({ desc, gitRepo, lastUpdated, projectName, siteName, snapshot, techUsed }) => (
+export const ProjectPageTemplate = ({ desc, gitRepo, lastUpdated, projectName, siteName, snapshot, techUsed, preview }) => (
       <Layout>
             <Project 
                   projectName={projectName} 
@@ -17,6 +17,7 @@ export const ProjectPageTemplate = ({ desc, gitRepo, lastUpdated, projectName, s
                   snapshot={snapshot} 
                   siteName={siteName}
                   techUsed={techUsed}
+                  preview={preview}
             />
       </Layout>
 )
@@ -63,6 +64,7 @@ export const query = graphql`
                         projectName
                         siteName
                         snapshot
+                        preview
                         techUsed
                   }
             }

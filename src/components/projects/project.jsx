@@ -10,6 +10,7 @@ import Tech from '../techs/tech'
 import Button from '../button'
 import Top from '../../../static/assets/decorations/ProjectTop.svg'
 import Bot from '../../../static/assets/decorations/ProjectBot.svg'
+import Carousel from './carousel'
 
 const Container = styled.section`
         
@@ -149,7 +150,7 @@ const Techs = styled.div`
         flex-flow: row wrap;
 `
 
-const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, siteName: siteUnformatted, snapshot, techUsed }) => {
+const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, siteName: siteUnformatted, snapshot, techUsed, preview }) => {
 
         // adding http.// before sitename => if not, it's goint to redirect to this-page/siteName.
         // just asafe guard in case no http:// is added on cms.
@@ -187,13 +188,7 @@ const Project = ({ desc, gitRepo: repoUnformatted, lastUpdated, projectName, sit
                         </ButtonsWr>
                         <ProjectImage>
                                 <Top id='top' />
-                                { fluid && 
-                                        (
-                                                <div className='img'>
-                                                        <Img fluid={fluid} />
-                                                </div>
-                                        )
-                                }
+                                <Carousel snapshots={preview} />
                                 <h3>Techs Used:</h3>
                                 <Techs>
                                         {

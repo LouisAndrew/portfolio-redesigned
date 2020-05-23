@@ -99,6 +99,7 @@ const ProjectItem = styled.div`
         width: 45%;
         margin-bottom: 10%;
         position: relative;
+        border-radius: 8px;
 
         ${({ theme }) => theme.center()};
         flex-direction: column;
@@ -107,8 +108,11 @@ const ProjectItem = styled.div`
 
         .img {
 
-                height: 150px;
-                width: 75px;
+                width: 100%;
+                
+                img {
+                        border-radius: 8px;
+                }
         }
 
         &::after {
@@ -119,6 +123,7 @@ const ProjectItem = styled.div`
                 position: absolute;
                 top: 0;
                 left: 0;
+                border-radius: 8px;
 
                 transition: .2s;
                 background-color: ${props => props.$hoverColor};
@@ -234,7 +239,7 @@ Project.propTypes = {
 
 Project.defaultProps = {
 
-        hoverColor: 'rgba( 225, 225, 225, .25 );'
+        hoverColor: 'rgba( 0, 0, 0, .25 );'
 }
 
 export default ProjectShowcase
