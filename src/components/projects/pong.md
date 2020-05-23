@@ -3,7 +3,7 @@ templateKey: projects
 title: PONG
 projectName: Pong
 lastUpdated: 2020-05-19T21:07:52.008Z
-gitRepo: https://github.com/LouisAndrew/Pong
+gitRepo: github.com/LouisAndrew/Pong
 siteName: pong-eta.now.sh
 snapshot: assets/screenshot-2-.png
 techUsed:
