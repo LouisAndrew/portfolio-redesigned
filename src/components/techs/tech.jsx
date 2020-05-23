@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import useTechs from '../../hooks/useTechs'
 
@@ -42,8 +43,6 @@ const Tech = ({ techName }) => {
         const { frontmatter: data } = tech.node ? tech.node : { }
         // const { icon, name } = data && data
 
-        console.log(data)
-
         return (
                 <Container>
                         {
@@ -56,6 +55,10 @@ const Tech = ({ techName }) => {
                         }
                 </Container>
         ) 
+}
+
+Tech.propTypes = {
+        techName: PropTypes.string.isRequired,
 }
 
 export default Tech

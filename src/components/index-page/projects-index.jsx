@@ -34,6 +34,7 @@ const Container = styled.div`
                         
                         button {
                                 align-self: flex-end;
+                                margin-bottom: 5%;
                         }
                 }
         }
@@ -178,7 +179,12 @@ const ProjectShowcase = () => {
                 }
         ` )
 
+        const navigate = useNavigate()
         const projects = data.allMarkdownRemark.edges
+
+        const clickShowAll = () => {
+                navigate('/projects')
+        }
 
         return (
                 <Container className='wrap'>
@@ -188,7 +194,7 @@ const ProjectShowcase = () => {
                                 <h1>ECTS</h1>
                         </div>
                         <div className='projs'>
-                                <Button>SHOW ALL</Button>
+                                <Button onClick={clickShowAll}>SHOW ALL</Button>
                                 <Projects>
                                         {
                                                 projects.map( (project, i) => <Project key={i} {...project.node.frontmatter} /> )
@@ -217,6 +223,13 @@ const Project = ({ projectName, snapshot, hoverColor }) => {
                         <h3>{projectName}</h3>
                 </ProjectItem>
         )
+}
+
+Project.propTypes = {
+
+        projectName: PropTypes.string.isRequired,
+        snapshot: PropTypes.string.isRequired,
+        hoverColor: PropTypes.string,
 }
 
 Project.defaultProps = {
