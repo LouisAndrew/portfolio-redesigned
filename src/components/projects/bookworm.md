@@ -5,7 +5,14 @@ projectName: Bookworm
 lastUpdated: 2020-05-21T19:05:12.715Z
 gitRepo: github.com/LouisAndrew/Bookworm
 siteName: bookworm.now.sh
-snapshot: assets/2020-05-21-2-.png
+preview:
+  - assets/2020-05-23-10-.png
+  - assets/2020-05-23-11-.png
+  - assets/2020-05-23-12-.png
+  - assets/2020-05-23-13-.png
+  - assets/2020-05-23-14-.png
+snapshot: assets/2020-05-23-3-.png
+projColor: "#fffff"
 techUsed:
   - HTML5
   - Javascript
