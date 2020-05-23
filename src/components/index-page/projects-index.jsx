@@ -7,12 +7,14 @@ import { useNavigate } from '@reach/router'
 
 import useImages from '../../hooks/useImages'
 import Button from '../button'
+import Blob from '../../../static/assets/decorations/Blob.svg'
 
 const Container = styled.div`
         
         background-color: ${({ theme }) => theme.bg};
 
         display: flex;
+        position: relative;
 
         & > div {
 
@@ -33,6 +35,27 @@ const Container = styled.div`
                         button {
                                 align-self: flex-end;
                         }
+                }
+        }
+
+        #blob {
+
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                transform: scale(.7) translate(20%);
+
+                @media screen and ( max-width: 1100px ) {
+                        
+                        transform: scale(.5) translate(50%);
+                }
+
+                @media screen and ( max-width: 464px ) {
+                        
+                        transform: scale(.3) translate(70%);
+                        right: -5%;
+                        bottom: -7%;
                 }
         }
 
@@ -172,6 +195,7 @@ const ProjectShowcase = () => {
                                         }
                                 </Projects>
                         </div>
+                        <Blob id='blob' />
                 </Container>
         )
 }
