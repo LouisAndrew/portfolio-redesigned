@@ -59,9 +59,9 @@ const LinkWr = styled.ul`
         @media screen and ( max-width: 464px ) {
                 
                 position: absolute;
-                bottom: -400%;
+                bottom: 0;
                 right: 8%;
-                /* transform: translateX(8%); */
+                transform: translateY(100%);
                 border-radius: 3px;
 
                 flex-direction: column;
