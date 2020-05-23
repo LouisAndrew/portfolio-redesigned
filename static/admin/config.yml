@@ -44,7 +44,9 @@ collections:
     - { label: "Last Updated", name: 'lastUpdated', widget: date }
     - { label: "Git Repository Link", name: "gitRepo", widget: string }
     - { label: "Project's site", name: 'siteName', widget: string }
-    - { label: "Project Snapshot", name: snapshot, widget: image }
+    - { label: "Project Snapshot", name: snapshot, widget: list, field: { label: Images, name: image, widget: image } }
+    - { label: 'Project Preview', name: preview, widget: image }
+    - { label: 'Project Color?', name: projColor, widget: string }
     - { label: "Technology Used", name: "techUsed", widget: list, field: { label: Techs, name: techs, widget: relation, collection: "technologies", searchFields: ['name'], valueField: "name", displayFields: ["name", "icon"] } }
     - { label: Description, name: desc, widget: string }    
 
