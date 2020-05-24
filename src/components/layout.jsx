@@ -128,6 +128,13 @@ const Layout = ({ children }) => {
 
                 }
 
+                @media screen and ( max-width: 840px ) {
+
+                        h1 {
+                                font-size: 75px;
+                        }
+                }
+
                 @media screen and ( max-width: 464px ) {
                         
                         h1 {
@@ -147,7 +154,7 @@ const Layout = ({ children }) => {
                         }  */
 
                         p, a, button {
-                                font-size: 3.5vw;
+                                font-size: 4.5vw;
                         }
                 }
         `

@@ -10,7 +10,7 @@ import Tech from '../techs/tech'
 import Button from '../button'
 import Top from '../../../static/assets/decorations/ProjectTop.svg'
 import Bot from '../../../static/assets/decorations/ProjectBot.svg'
-import Carousel from './carousel'
+import Carousel from './carousel/carousel'
 
 const Container = styled.section`
         

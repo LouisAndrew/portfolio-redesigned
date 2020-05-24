@@ -24,7 +24,6 @@ const Container = styled.section`
 const Heading = styled.div`
         
         border-right: 3px solid ${({ theme }) => theme.ft};
-        /* padding-right: 5%; */
 
         @media screen and ( max-width: 464px ) {
 
@@ -80,9 +79,12 @@ const CtItem = styled.div`
                 margin-right: 10%;
         }
 
-        @media screen and ( max-width: 464px )  {
+        @media screen and ( max-width: 840px )  {
 
-                
+                img {
+                        height: 5vh;
+                        width: 5vh;
+                }
         }
 `
 
