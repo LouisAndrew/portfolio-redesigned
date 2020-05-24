@@ -69,6 +69,10 @@ const Layout = ({ children }) => {
                         }
                 }
 
+                body {
+                        overflow-x: hidden;
+                }
+
                 h1 {
                         font-size: 100px;
                         font-family: 'Roboto', sans-serif;

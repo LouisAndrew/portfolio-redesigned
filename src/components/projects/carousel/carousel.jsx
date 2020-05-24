@@ -35,6 +35,18 @@ const Container = styled.div`
                         z-index: 1;
                         transition: .2s;
                 }
+
+                .pagin-wrapper {
+
+                        position: absolute;
+                        left: 50%;
+                        top: 90%;
+                        transform: translate(-50%, -90%);
+
+                        z-index: 2;
+
+                        display: flex;
+                }
         }
 
         #back {
@@ -84,6 +96,8 @@ const Carousel = ({ snapshots }) => {
                 } )
         }
 
+        const goToIndex = index => setInDisplay(index)
+
         useEffect(() => {
 
                 setDisplay(inDisplay)
@@ -98,7 +112,7 @@ const Carousel = ({ snapshots }) => {
                                 }
                                 <div className='pagin-wrapper'>
                                         {
-                                                [...Array(length).keys()].map( key => <CarouselPagin  /> )
+                                                [...Array(length).keys()].map( key => <CarouselPagin index={key} inDisplay={inDisplay} goToIndex={goToIndex} /> )
                                         }
                                 </div>
                         </div>

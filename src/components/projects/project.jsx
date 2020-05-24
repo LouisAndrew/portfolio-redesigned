@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
 
 import useImages from '../../hooks/useImages'
 import Github from '../../../static/assets/github_icon.svg'
@@ -22,13 +21,12 @@ const Container = styled.section`
 
         @media screen and ( max-width: 840px ) {
                 
-                padding-top: 20%;
+                padding-top: 15% !important;
         }
 
         @media screen and ( max-width: 464px ) {
                 
-                padding-top: 20%;
-
+                padding-top: 20% !important;
                 ${({ theme }) => theme.center()};
                 flex-direction: column;
 
@@ -45,6 +43,7 @@ const Container = styled.section`
 const ButtonsWr = styled.div`
         
         display: flex;
+        margin-top: 2%;
 
         button {
 
@@ -62,7 +61,7 @@ const ButtonsWr = styled.div`
 
 const ProjectImage = styled.div`
         
-        margin: 12% 0;
+        margin: 8% 0 12%;
         padding: 5%;
         border-radius: 8px;
         width: 100%;
@@ -94,7 +93,7 @@ const ProjectImage = styled.div`
 
                 @media screen and ( max-width: 1100px ) {
                         
-                        left: -5%;
+                        left: -4%;
                 }
         }
 
