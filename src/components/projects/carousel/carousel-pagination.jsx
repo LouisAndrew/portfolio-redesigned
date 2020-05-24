@@ -27,8 +27,12 @@ const Circle = styled.div`
 `
 
 const CarouselPagin = ({ index, goToIndex, inDisplay }) => <Circle $active={inDisplay === index} onClick={() => goToIndex(index)} />
-CarouselPagin.propTypes = {
 
+CarouselPagin.propTypes = {
+        
+        index: PropTypes.number.isRequired,
+        goToIndex: PropTypes.func.isRequired,
+        inDisplay: PropTypes.number.isRequired,
 }
 
 export default CarouselPagin

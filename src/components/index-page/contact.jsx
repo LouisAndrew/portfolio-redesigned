@@ -86,6 +86,13 @@ const CtItem = styled.div`
                         width: 5vh;
                 }
         }
+
+        @media screen and ( max-width: 840px ) and ( orientation: landscape ) {
+                img {
+                        height: 5vw;
+                        width: 5vw;
+                }
+        }
 `
 
 const Contact = ({ contactLists, heading, subheading }) => {

@@ -105,7 +105,7 @@ const Carousel = ({ snapshots }) => {
 
         return (
                 <Container>
-                        <Back className='nav' id='back' onClick={prev} />
+                        { length > 1 && <Back className='nav' id='back' onClick={prev} /> }
                         <div id='car-wrapper' className='carousel-wrapper'>
                                 {
                                         snapshots.map( (snapshot, i) => <CarouselImg value={i} key={i} image={snapshot} /> )
@@ -116,7 +116,7 @@ const Carousel = ({ snapshots }) => {
                                         }
                                 </div>
                         </div>
-                        <Forward className='nav' id='forward' onClick={next} />
+                        { length > 1 && <Forward className='nav' id='forward' onClick={next} /> }
                 </Container>
         )
 }
