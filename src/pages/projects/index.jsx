@@ -29,6 +29,7 @@ export const query = graphql`
                                 node {
                                         frontmatter {
                                                 projectName
+                                                snapshot
                                         }
                                 }
                         }
