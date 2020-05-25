@@ -71,7 +71,7 @@ export const filterInFilter = (data, array) => {
 
         if ( typeof array !== 'object' ) return [ ]
 
-        return array.filter( dt => dt.node.frontmatter.techUsed.some( tech => tech === data ) )
+        return array.filter( dt => dt.node.frontmatter.techUsed.some( tech => tech.toUpperCase() === data.toUpperCase() ) )
 }
 
 // TODO: pagination
@@ -92,10 +92,18 @@ const AllProjects = ({ data }) => {
         const [ store, setStore ] = useState([ ])
         const [ items, setItems ] = useState([ ])
 
+        const sortFunction = (full, sortState) => {
+
+                return typeof sortState === 'object' ? sortState.reduce( (before, value) => filterInFilter( value, before ), full ) : filterInFilter( sortState, full )
+        } 
+
         useEffect(() => {
 
-                console.log(data)
         }, [])
+
+        useEffect(() => {
+
+        }, [ pageNum, sortBy ])
 
         return (
                 <Container className='wrap'>
