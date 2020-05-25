@@ -79,7 +79,7 @@ const Container = styled.div`
         }
 `
 
-const Project = ({ projectName, snapshot, hoverColor }) => {
+const Project = ({ projectName, snapshot, hoverColor, className }) => {
 
         const navigate = useNavigate()
         const trimAssets = str => str && str.includes('assets/') ? str.split('assets/')[1] : str
@@ -87,10 +87,8 @@ const Project = ({ projectName, snapshot, hoverColor }) => {
         const img = useImages( trimAssets(snapshot) )
         const fluid = img && img.node ? img.node.childImageSharp.fluid : { }
 
-        console.log(hoverColor)
-
         return (
-                <Container onClick={() => navigate(`/projects/${projectName.toLowerCase()}`)} $hoverColor={hoverColor}>
+                <Container className={className} onClick={() => navigate(`/projects/${projectName.toLowerCase()}`)} $hoverColor={hoverColor}>
                         <div className='img'>
                                 <Img fluid={fluid} />
                         </div>
@@ -105,11 +103,13 @@ Project.propTypes = {
         projectName: PropTypes.string.isRequired,
         snapshot: PropTypes.string.isRequired,
         hoverColor: PropTypes.string,
+        className: PropTypes.string,
 }
 
 Project.defaultProps = {
 
-        hoverColor: 'rgba( 0, 0, 0, .25 );'
+        hoverColor: 'rgba( 0, 0, 0, .25 );',
+        className: ''
 }
 
 export default Project
