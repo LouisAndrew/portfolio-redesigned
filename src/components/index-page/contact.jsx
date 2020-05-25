@@ -59,12 +59,6 @@ const Contacts = styled.div`
                 padding-top: 10%;
 
                 align-items: center;
-
-                img {
-                        
-                        height: 35px;
-                        width: 35px;
-                }
         }
 `
 
@@ -92,6 +86,14 @@ const CtItem = styled.div`
                 img {
                         height: 5vw;
                         width: 5vw;
+                }
+        }
+
+        @media screen and ( max-width: 464px ) {
+
+                img {
+                        height: 8vw;
+                        width: 8vw;
                 }
         }
 `
