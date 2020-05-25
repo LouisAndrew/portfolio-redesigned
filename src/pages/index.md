@@ -30,6 +30,10 @@ expertees:
     - heading: KEakdlaad
       desc: " "
       image: assets/gridicons_product.svg
+  headingList:
+    - h: WHAT
+    - h: CAN I
+    - h: OFFER?
 contact:
   heading: GET IN TOUCH!
   contactLists:
@@ -44,5 +48,8 @@ contact:
       redirect: false
       icon: assets/call-24px-1.svg
   subheading: " "
+  headingList:
+    - h: GET IN
+    - h: TOUCH!
 image: assets/whh_design.svg
 ---
