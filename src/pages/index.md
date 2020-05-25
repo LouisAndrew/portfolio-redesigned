@@ -15,6 +15,9 @@ intro:
     non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   heading: WHO AM I?
   image: assets/img_9456.jpeg
+  headingList:
+    - h: WHO
+    - h: AM I?
 expertees:
   heading: WHAT CAN I OFFER?
   myExpertees:
