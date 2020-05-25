@@ -7,10 +7,12 @@ import Layout from '../components/layout'
 import Expertees from '../components/index-page/expertees'
 import Contact from '../components/index-page/contact'
 import ProjectShowcase from '../components/index-page/projects-index'
+import Intro from '../components/index-page/intro'
 
-export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact }) => (
+export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact, intro }) => (
       <Layout>
             <Hero heading={heading} subheading={subheading} cta={cta} />
+            <Intro {...intro} />
             <Expertees {...expertees} />
             <ProjectShowcase />
             <Contact {...contact} />
@@ -20,7 +22,7 @@ export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, 
 const IndexPage = ({ data: result }) => {
 
       const  data = result.markdownRemark.frontmatter
-
+      
       return <IndexPageTemplate {...data}  />
 }
 
@@ -36,7 +38,8 @@ IndexPageTemplate.propTypes = {
       subheading: PropTypes.string.isRequired,
       cta: PropTypes.string,
       expertees: PropTypes.objectOf( PropTypes.object ).isRequired,
-      contact: PropTypes.objectOf( PropTypes.object ).isRequired
+      contact: PropTypes.objectOf( PropTypes.object ).isRequired,
+      Intro: PropTypes.objectOf( PropTypes.object, ).isRequired,
 }
 
 IndexPageTemplate.defaultProps = {
@@ -62,6 +65,9 @@ export const query = graphql`
                                     heading
                                     image
                               }
+                              headingList {
+                                    h
+                              }
                         }
                         contact {
                               contactLists {
@@ -73,6 +79,17 @@ export const query = graphql`
                               }
                               heading
                               subheading
+                              headingList {
+                                    h
+                              }
+                        }
+                        intro {
+                              desc
+                              heading
+                              headingList {
+                                    h
+                              }
+                              image
                         }
                   }
             }

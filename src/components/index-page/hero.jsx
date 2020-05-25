@@ -82,7 +82,7 @@ const Items = styled.div`
         }
 
         h1 {
-                font-family: 'Racing Sans One', cursive !important;
+                font-family: 'Racing Sans One' !important;
                 animation-name: ${animation};
                 animation-duration: 2s;
                 animation-iteration-count: 2;

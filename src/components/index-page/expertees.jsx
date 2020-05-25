@@ -75,6 +75,10 @@ const Item = styled.div`
                 align-items: flex-start;
         }
 
+        h1 {
+                text-align: right;
+        }
+
         @media screen and ( max-width: 840px ) {
 
                 width: 100%;
@@ -83,6 +87,10 @@ const Item = styled.div`
                 &:first-child {
 
                         padding-top: 15%;
+                }
+
+                h1 {
+                        text-align: left;
                 }
         }
 `
@@ -131,22 +139,17 @@ const ExpItem = styled.div`
         }
 `
 
-const Expertees = ({ heading, myExpertees }) => {
-
-        // dunno if this is necessary, could just hard code them..
-        const splittedHeading = heading.split(' ')
+const Expertees = ({ heading, myExpertees, headingList }) => {
 
         return (
                 <Container className='wrap'>
                         <Content>
                                 <Item>
-                                        <h1>{splittedHeading[0]}</h1>
-                                        <h1>
+                                        <div>
                                                 {
-                                                        heading
-                                                                .split( splittedHeading[0] )[1]
+                                                        headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
                                                 }
-                                        </h1>
+                                        </div>
                                 </Item>
                                 <Item>
                                         {
@@ -182,12 +185,18 @@ Expertees.propTypes = {
                         image: PropTypes.string.isRequired
                 })
         ),
+        headingList: PropTypes.arrayOf(
+                PropTypes.shape({
+                        h: PropTypes.string.isRequired,
+                }),
+        ),
 }
 
 Expertees.defaultProps = {
 
         heading: '',
-        myExpertees: [ ]
+        myExpertees: [ ],
+        headingList: [ ]
 }
 
 ExperteeItem.propTypes = {

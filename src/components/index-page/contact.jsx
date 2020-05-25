@@ -14,9 +14,10 @@ const Container = styled.section`
         @media screen and ( max-width: 464px ) {
                 
                 flex-direction: column;
+                align-items: center;
 
                 & > div {
-                        width: 100%;
+                        width: fit-content;
                 }
         }
 `
@@ -34,7 +35,7 @@ const Heading = styled.div`
                 padding-bottom: 10%;
 
                 h1 {
-                        text-align: center;
+                        text-align: left;
                 }
         }
 `
@@ -95,22 +96,14 @@ const CtItem = styled.div`
         }
 `
 
-const Contact = ({ contactLists, heading, subheading }) => {
-
-        // same as expertees, not sure if necessary..
-        const splittedHeading = heading.split(' ')
-        const splitLength = splittedHeading.length - 1
+const Contact = ({ contactLists, heading, subheading, headingList }) => {
 
         return (
                 <Container id='contact' className='wrap'>
                         <Heading>
-                                <h1>
-                                        {
-                                                heading
-                                                        .split( splittedHeading[ splitLength ] )[0]
-                                        }
-                                </h1>
-                                <h1>{ splittedHeading[ splitLength ] }</h1>
+                                {
+                                        headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
+                                }
                         </Heading>
                         <Contacts>
                                 {

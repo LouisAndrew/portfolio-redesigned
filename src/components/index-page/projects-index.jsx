@@ -28,6 +28,10 @@ const Container = styled.div`
                         justify-content: flex-start;
                         
                         z-index: 3;
+
+                        h1 {
+                                text-align: left;
+                        }
                 }
 
                 &.projs {
@@ -63,12 +67,12 @@ const Container = styled.div`
         @media screen and ( max-width: 464px ) {
                 
                 flex-direction: column;
+                align-items: center;
 
                 & > div {
 
                         &.header {
-
-                                align-items: center;
+                                width: fit-content;
                         }
 
                         &.projs {
