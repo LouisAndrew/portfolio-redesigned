@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { useLocation } from '@reach/router'
+import { useLocation, useNavigate } from '@reach/router'
 
 import ProjectItem from './project-item-all'
 
@@ -48,10 +48,30 @@ export const reformat = location => {
         if ( !location.includes('?') ) return { }
 
         const query = location.split('?')[1]
-
         const splitMultiple = query.split('&')
 
-        return splitMultiple.reduce( (o, key) => ({ ...o, [key.split('=')[0]]: key.split('=')[1] }), { } )
+        return splitMultiple.reduce( (o, key) => {
+                
+                const objKey = key.split('=')[0].replace('_', ' ')
+                const tempValue = key.split('=')[1].replace('_', ' ')
+
+                const objVal = tempValue.includes('+') ? 
+                        tempValue
+                                .split('+') : 
+                        tempValue
+
+                return {
+                        ...o,
+                        [objKey]: objVal
+                }
+        }, { } )
+}
+
+export const filterInFilter = (data, array) => {
+
+        if ( typeof array !== 'object' ) return [ ]
+
+        return array.filter( dt => dt.node.frontmatter.techUsed.some( tech => tech === data ) )
 }
 
 // TODO: pagination
@@ -60,8 +80,22 @@ export const reformat = location => {
 // TODO filter.
 const AllProjects = ({ data }) => {
 
+        const ITEM_PER_PAGE = 6
+
         const location = useLocation()
 
+        const { page, sort } = reformat(location.search)
+        const navigate = useNavigate()
+
+        const [ pageNum, setPageNum ] = useState( page || 1 )
+        const [ sortBy, setSortBy ] = useState( sort || '' )
+        const [ store, setStore ] = useState([ ])
+        const [ items, setItems ] = useState([ ])
+
+        useEffect(() => {
+
+                console.log(data)
+        }, [])
 
         return (
                 <Container className='wrap'>

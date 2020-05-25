@@ -30,6 +30,7 @@ export const query = graphql`
                                         frontmatter {
                                                 projectName
                                                 snapshot
+                                                techUsed
                                         }
                                 }
                         }
