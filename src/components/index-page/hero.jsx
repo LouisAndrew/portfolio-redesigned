@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useEffect } from 'react'
+import styled, { keyframes } from 'styled-components'
 import PropTypes from 'prop-types'
 import { useNavigate } from '@reach/router'
+import Particles from 'react-particles-js'
 
 import Laser from '../../../static/assets/decorations/LaserBeam.svg'
-import Hooman from '../../../static/assets/decorations/Hooman.svg'
 import Button from '../button'
 
 const Container = styled.section`
@@ -13,7 +13,7 @@ const Container = styled.section`
         position: relative;
         background-color: ${({ theme }) => theme.bg};
 
-        display: flex;
+        ${({ theme }) => theme.center()};
 
         #laser {
 
@@ -32,11 +32,34 @@ const Container = styled.section`
 
                         transform: scale(.7) translateX(30%);
                 }
+        }
+`
 
-                #hooman {
+const Background = styled(Particles)`
+        
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+`
 
-                        display: none;
-                }
+const animation = props => keyframes`
+
+        0% {
+                color: ${props.theme.ft};
+        }
+
+        33% {
+                color: ${props.theme.red};
+        }
+
+        66% {
+                color: ${props.theme.blue};
+        }
+
+        100% {
+                color: ${props.theme.ft};
         }
 `
 
@@ -50,6 +73,7 @@ const Items = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
 
         &:nth-child(2) {
                 
@@ -57,12 +81,22 @@ const Items = styled.div`
                 align-items: center;
         }
 
+        h1 {
+                font-family: 'Racing Sans One', cursive !important;
+                animation-name: ${animation};
+                animation-duration: 2s;
+                animation-iteration-count: 2;
+        }
+
         p {
                 margin: 10% 0 5%;
         }
 
-        #hooman {
-                width: 80%;
+        
+        h1, p {
+                text-align: center;
+                z-index: 2;
+                position: relative;
         }
 
         @media screen and ( max-width: 464px ) {
@@ -71,12 +105,6 @@ const Items = styled.div`
                 /* padding-right: 0; */
 
                 align-items: center;
-
-                h1, p {
-                        text-align: center;
-                        z-index: 2;
-                        position: relative;
-                }
 
                 p {
                         padding: 0 2%;
@@ -89,17 +117,40 @@ const Hero = ({ heading, subheading, cta }) => {
         const navigate = useNavigate()
 
         return (
-                <Container id='hero' className='wrap'>
+                <Container id='particles-js' className='wrap'>
+                        <Background 
+                                params={{
+                                        polygon: {
+                                                enable: true,
+                                                move: {
+                                                        radius: 200
+                                                },
+                                                draw: {
+                                                        enable: false
+                                                }
+                                        },
+                                        "interactivity": {
+                                                "detect_on": "window",
+                                                "events": {
+                                                    "onhover": {
+                                                        "enable": true,
+                                                        "mode": "repulse"
+                                                    },
+                                                    "onclick": {
+                                                        "enable": false,
+                                                        "mode": "bubble"
+                                                    },
+                                                    "resize": true
+                                                },
+                                        }
+                                }}
+                        />
                         <Items>
-                                <h1>{heading}</h1>
+                                <h1 id='hero-heading'>{heading}</h1>
                                 <p>{subheading}</p>
                                 <Button color='ft' bColor='red' onClick={() => navigate('/projects')}>
                                         {cta}
                                 </Button>
-                        </Items>
-                        <Items>
-                                {/* standing human svg!! */}
-                                <Hooman id='hooman' />
                         </Items>
                         <Laser id='laser' />
                 </Container>
