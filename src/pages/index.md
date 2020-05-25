@@ -1,14 +1,22 @@
 ---
 templateKey: index
 title: Portfolio Site!
-image: assets/whh_design.svg
-heading: Heyy! 🤙️
+heading: Hello.
 subheading: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem gravida
   eu sagittis habitasse hendrerit eget vel. Sagittis ultrices euismod cras
   elementum.
 cta: check my projects.
+intro:
+  desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  heading: WHO AM I?
+  image: assets/img_9456.jpeg
 expertees:
-  heading: THINGS I DO
+  heading: WHAT CAN I OFFER?
   myExpertees:
     - heading: Web Design
       image: assets/whh_design.svg
@@ -16,6 +24,9 @@ expertees:
     - heading: Front End
       image: assets/bx_bx-code-alt.svg
       desc: " "
+    - heading: KEakdlaad
+      desc: " "
+      image: assets/gridicons_product.svg
 contact:
   heading: GET IN TOUCH!
   contactLists:
@@ -30,4 +41,5 @@ contact:
       redirect: false
       icon: assets/call-24px-1.svg
   subheading: " "
+image: assets/whh_design.svg
 ---
