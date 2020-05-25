@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import PropTypes from 'prop-types'
 import { useNavigate } from '@reach/router'
@@ -112,12 +112,13 @@ const Items = styled.div`
         }
 `
 
-const Hero = ({ heading, subheading, cta }) => {
+const Hero = ({ heading, subheading, cta, canvas }) => {
 
         const navigate = useNavigate()
 
         return (
                 <Container id='particles-js' className='wrap'>
+                        { canvas && (
                         <Background 
                                 params={{
                                         polygon: {
@@ -144,10 +145,11 @@ const Hero = ({ heading, subheading, cta }) => {
                                                 },
                                         }
                                 }}
-                        />
+                        /> 
+                        )}
                         <Items>
-                                <h1 id='hero-heading'>{heading}</h1>
-                                <p>{subheading}</p>
+                                <h1 data-testid='hero-heading' id='hero-heading'>{heading}</h1>
+                                <p data-testid='hero-par'>{subheading}</p>
                                 <Button color='ft' bColor='red' onClick={() => navigate('/projects')}>
                                         {cta}
                                 </Button>
@@ -162,6 +164,11 @@ Hero.propTypes = {
         heading: PropTypes.string.isRequired,
         subheading: PropTypes.string.isRequired,
         cta: PropTypes.string.isRequired,
+        canvas: PropTypes.bool,
+}
+
+Hero.defaultProps = {
+        canvas: false
 }
 
 export default Hero

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component matches snapshot 1`] = `
+<section
+  className="sc-AxirZ fxMaFa wrap"
+  id="particles-js"
+>
+  <div
+    className="sc-AxhCb biZWCw"
+  >
+    <h1
+      data-testid="hero-heading"
+      id="hero-heading"
+    >
+      Hello
+    </h1>
+    <p
+      data-testid="hero-par"
+    >
+      Test paragraph
+    </p>
+    <button
+      className="sc-AxjAm gqzgEY"
+      color="ft"
+      data-testid="button"
+      onClick={[Function]}
+    />
+  </div>
+  <test-file-stub
+    id="laser"
+  />
+</section>
+`;

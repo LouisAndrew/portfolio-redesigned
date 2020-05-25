@@ -11,7 +11,7 @@ import Intro from '../components/index-page/intro'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact, intro }) => (
       <Layout>
-            <Hero heading={heading} subheading={subheading} cta={cta} />
+            <Hero heading={heading} subheading={subheading} cta={cta} canvas />
             <Intro {...intro} />
             <Expertees {...expertees} />
             <ProjectShowcase />

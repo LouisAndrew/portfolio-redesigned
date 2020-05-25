@@ -16,7 +16,14 @@ const Container = styled.section`
 
                 position: absolute;
                 top: 5vw;
-                left: 8vw;
+                left: 8%;
+        }
+
+        @media screen and ( min-width: 1440px ) {
+
+                #corner {
+                        left: calc( (100vw - 1200px) / 2 - 4vw );
+                }
         }
 
         @media screen and ( max-width: 840px ) {
