@@ -5,7 +5,7 @@ const useGoogleFonts = () => {
         const createLink = () => {
                 
                 const link = document.createElement('link')
-                link.href = 'https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap'
+                link.href = 'https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&family=Racing+Sans+One&display=swap'
                 link.rel = 'stylesheet'
 
                 return link
