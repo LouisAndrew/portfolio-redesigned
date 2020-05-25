@@ -16,7 +16,6 @@ const Container = styled.div`
         width: 45%;
         margin-bottom: 10%;
         position: relative;
-        border-radius: 8px;
 
         ${({ theme }) => theme.center()};
         flex-direction: column;
@@ -26,10 +25,6 @@ const Container = styled.div`
         .img {
 
                 width: 100%;
-                
-                img {
-                        border-radius: 8px;
-                }
         }
 
         &::after {
@@ -84,27 +79,7 @@ const Container = styled.div`
         }
 `
 
-
 const Project = ({ projectName, snapshot, hoverColor }) => {
-
-        const navigate = useNavigate()
-
-        const splittedImgPath = snapshot.includes('assets/') ? snapshot.split('assets/')[1] : snapshot
-
-        const data = useImages(splittedImgPath)
-        const fluid = data.node ? data.node.childImageSharp.fluid : { }
-
-        return (
-                <ProjectItem onClick={() => navigate(`/projects/${projectName.toLowerCase()}`)} $hoverColor={hoverColor}>
-                        <div className='img'>
-                                <Img fluid={fluid} />
-                        </div>
-                        <h3>{projectName}</h3>
-                </ProjectItem>
-        )
-}
-
-const ProjectItem = ({ projectName, snapshot, hoverColor }) => {
 
         const navigate = useNavigate()
         const trimAssets = str => str && str.includes('assets/') ? str.split('assets/')[1] : str
@@ -112,7 +87,7 @@ const ProjectItem = ({ projectName, snapshot, hoverColor }) => {
         const img = useImages( trimAssets(snapshot) )
         const fluid = img && img.node ? img.node.childImageSharp.fluid : { }
 
-        console.log(fluid)
+        console.log(hoverColor)
 
         return (
                 <Container onClick={() => navigate(`/projects/${projectName.toLowerCase()}`)} $hoverColor={hoverColor}>
@@ -124,13 +99,17 @@ const ProjectItem = ({ projectName, snapshot, hoverColor }) => {
         )
 }
 
-ProjectItem.propTypes = {
 
+Project.propTypes = {
+
+        projectName: PropTypes.string.isRequired,
+        snapshot: PropTypes.string.isRequired,
+        hoverColor: PropTypes.string,
 }
 
-ProjectItem.defaultProps = {
+Project.defaultProps = {
 
-        hoverColor: 'rgba(0, 0, 0, .25)'
+        hoverColor: 'rgba( 0, 0, 0, .25 );'
 }
 
-export default ProjectItem
+export default Project

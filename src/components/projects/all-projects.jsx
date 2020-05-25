@@ -19,8 +19,6 @@ const ProjectCont = styled.div`
 // TODO filter.
 const AllProjects = ({ data }) => {
 
-        console.log(data)
-
         return (
                 <Container className='wrap'>
                         <ProjectCont>
