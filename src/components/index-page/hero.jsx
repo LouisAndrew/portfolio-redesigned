@@ -152,7 +152,7 @@ const Hero = ({ heading, subheading, cta, canvas }) => {
                         <Items>
                                 <h1 data-testid='hero-heading' id='hero-heading'>{heading}</h1>
                                 <p data-testid='hero-par'>{subheading}</p>
-                                <Button color='ft' bColor='red' onClick={() => navigate('/projects')}>
+                                <Button color='ft' bColor='red' onClick={() => navigate('/projects?page=1')}>
                                         {cta}
                                 </Button>
                         </Items>

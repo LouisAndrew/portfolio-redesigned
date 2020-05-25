@@ -120,7 +120,7 @@ const ProjectShowcase = () => {
         const projects = data.allMarkdownRemark.edges
 
         const clickShowAll = () => {
-                navigate('/projects')
+                navigate('/projects?page=1')
         }
 
         return (

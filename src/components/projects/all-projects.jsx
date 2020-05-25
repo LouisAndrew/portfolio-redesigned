@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { useLocation } from '@reach/router'
+
 import ProjectItem from './project-item-all'
 
 const Container = styled.section`
@@ -40,11 +42,26 @@ const ProjectCont = styled.div`
                 }
         }
 `
+
+export const reformat = location => {
+
+        if ( !location.includes('?') ) return { }
+
+        const query = location.split('?')[1]
+
+        const splitMultiple = query.split('&')
+
+        return splitMultiple.reduce( (o, key) => ({ ...o, [key.split('=')[0]]: key.split('=')[1] }), { } )
+}
+
 // TODO: pagination
 // TODO: sorting
 // TODO: map projects.
 // TODO filter.
 const AllProjects = ({ data }) => {
+
+        const location = useLocation()
+
 
         return (
                 <Container className='wrap'>
