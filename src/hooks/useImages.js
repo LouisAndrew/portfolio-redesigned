@@ -32,7 +32,7 @@ const useImages = relativePath => {
     // filter by relativePath
     const filter = (path, data) => { 
 
-        return data.filter( nodeParent => nodeParent.node.relativePath === path )
+        return data ? data.filter( nodeParent => nodeParent.node.relativePath === path ) : [ ]
     }
 
     useEffect(() => {

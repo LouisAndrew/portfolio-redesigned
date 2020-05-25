@@ -9,9 +9,10 @@ import { LocationProvider } from '@reach/router'
 
 import Hero from '../hero'
 
-describe('Hero component', () => {
+describe('Hero component on landing page.', () => {
         
         afterEach( cleanup )
+        
         const mainText = 'Hello'
         const parText = 'Test paragraph'
 

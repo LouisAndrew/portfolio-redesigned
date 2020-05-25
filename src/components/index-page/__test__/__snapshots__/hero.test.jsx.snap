@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hero component matches snapshot 1`] = `
+exports[`Hero component on landing page. matches snapshot 1`] = `
 <section
   className="sc-AxirZ fxMaFa wrap"
   id="particles-js"

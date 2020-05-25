@@ -95,22 +95,22 @@ const Intro = ({ desc, image, heading, headingList }) => {
 
         const imageSplitter = img => img.includes('assets/') ? img.split('assets/')[1] : img
 
-        const img = useImages( imageSplitter(image) )
+        const img = image && useImages( imageSplitter(image) )
         const fluid = ( img && img.node )? img.node.childImageSharp.fluid : { }
 
         return (
                 <Container className='wrap'>
                         <Corner id='corner' />
-                        <div className='heading'>
+                        <div data-testid='intro-heading' className='heading'>
                                 {
-                                        headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
+                                        headingList && headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
                                 }
                         </div>
                         <Desc>
                                 <div className='img'>
-                                        <Img fluid={fluid} />
+                                        { fluid && <Img fluid={fluid} /> }
                                 </div>
-                                <p>{desc}</p>
+                                <p data-testid='intro-par'>{desc}</p>
                         </Desc>
                 </Container>
         )
@@ -118,6 +118,12 @@ const Intro = ({ desc, image, heading, headingList }) => {
 
 Intro.propTypes = {
 
+        heading: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        headingList: PropTypes.arrayOf( 
+                PropTypes.string,
+         ).isRequired,
 }
 
 export default Intro
