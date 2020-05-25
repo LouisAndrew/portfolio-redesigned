@@ -143,12 +143,18 @@ Contact.propTypes = {
         ),
         heading: PropTypes.string.isRequired,
         subheading: PropTypes.string,
+        headingList: PropTypes.arrayOf(
+                PropTypes.shape({
+                        h: PropTypes.string,
+                }),
+        ),
 }
 
 Contact.defaultProps = {
 
         contactLists: [],
         subheading: '',
+        headingList: [ ]
 }
 
 ContactItem.propTypes = {

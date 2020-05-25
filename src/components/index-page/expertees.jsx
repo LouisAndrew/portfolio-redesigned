@@ -115,7 +115,6 @@ const ExpItem = styled.div`
                 justify-content: center;
 
                 margin: 10% 0;
-                justify-content: center;
 
                 img {
 
@@ -145,15 +144,15 @@ const Expertees = ({ heading, myExpertees, headingList }) => {
                 <Container className='wrap'>
                         <Content>
                                 <Item>
-                                        <div>
+                                        <div data-testid='exprt-heading'>
                                                 {
-                                                        headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
+                                                        headingList && headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
                                                 }
                                         </div>
                                 </Item>
-                                <Item>
+                                <Item data-testid='exprt-item'>
                                         {
-                                                myExpertees.map( (expertee, i) => <ExperteeItem key={i} {...expertee} /> )
+                                                myExpertees && myExpertees.map( (expertee, i) => <ExperteeItem key={i} {...expertee} /> )
                                         }
                                 </Item>
                         </Content>
@@ -162,7 +161,7 @@ const Expertees = ({ heading, myExpertees, headingList }) => {
         )
 }
 
-const ExperteeItem = ({ desc, heading, image }) => {
+export const ExperteeItem = ({ desc, heading, image }) => {
 
         return (
                 <ExpItem>

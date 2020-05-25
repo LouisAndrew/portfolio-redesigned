@@ -81,9 +81,11 @@ const Items = styled.div`
                 align-items: center;
         }
 
+        /* do i need the animation? isn't it more of a distraction? */
+
         h1 {
                 font-family: 'Racing Sans One' !important;
-                animation-name: ${animation};
+                /* animation-name: ${animation}; */
                 animation-duration: 2s;
                 animation-iteration-count: 2;
         }

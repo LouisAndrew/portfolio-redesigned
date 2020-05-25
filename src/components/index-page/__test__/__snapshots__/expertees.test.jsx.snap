@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expertee component on landing page. matches snapshot 1`] = `
+<section
+  className="sc-AxjAm dAmJxq wrap"
+>
+  <div
+    className="sc-AxirZ fvTqxL"
+  >
+    <div
+      className="sc-AxiKw cENQJy"
+    >
+      <div
+        data-testid="exprt-heading"
+      >
+        <h1>
+          My
+        </h1>
+        <h1>
+          Expertees
+        </h1>
+      </div>
+    </div>
+    <div
+      className="sc-AxiKw cENQJy"
+      data-testid="exprt-item"
+    >
+      <div
+        className="sc-AxhCb filtyS"
+      >
+        <img
+          alt="heading1"
+          src="mockimg1"
+        />
+        <div>
+          <h3>
+            heading1
+          </h3>
+          <p>
+            desc1
+          </p>
+        </div>
+      </div>
+      <div
+        className="sc-AxhCb filtyS"
+      >
+        <img
+          alt="heading2"
+          src="mockimg2"
+        />
+        <div>
+          <h3>
+            heading2
+          </h3>
+          <p>
+            desc2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <test-file-stub
+    id="circular"
+  />
+</section>
+`;

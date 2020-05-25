@@ -6,7 +6,7 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
   id="particles-js"
 >
   <div
-    className="sc-AxhCb biZWCw"
+    className="sc-AxhCb evnbtu"
   >
     <h1
       data-testid="hero-heading"

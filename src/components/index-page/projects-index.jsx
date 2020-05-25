@@ -197,7 +197,7 @@ const ProjectShowcase = () => {
 
         return (
                 <Container className='wrap'>
-                        <div className='header'>
+                        <div data-testid='proj-heading' className='header'>
                                 <h1>MY </h1>
                                 <h1>PROJ</h1>
                                 <h1>ECTS</h1>
