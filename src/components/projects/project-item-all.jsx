@@ -14,7 +14,7 @@ import useImages from '../../hooks/useImages'
 const Container = styled.div`
         
         width: 45%;
-        margin-bottom: 10%;
+        /* margin-bottom: 10%; */
         position: relative;
 
         ${({ theme }) => theme.center()};

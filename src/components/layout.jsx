@@ -93,13 +93,13 @@ const Layout = ({ children }) => {
                         font-family: 'Open Sans', sans-serif;
                 }
 
-                button, a {
+                button, a, label {
                         font-size: 18px;
                         font-weight: bold;
                         font-family: 'Open Sans', sans-serif;
                 }
 
-                h1, h2, h3, p, button, a {
+                h1, h2, h3, p, button, a, label {
                         color: ${theme.ft}
                 }
 

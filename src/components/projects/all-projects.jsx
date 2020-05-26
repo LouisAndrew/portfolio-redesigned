@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { useLocation, useNavigate } from '@reach/router'
 
 import ProjectItem from './project-item-all'
-import Pagination from './pagination'
+import Pagination from './project-queries/pagination'
+import Filter from './project-queries/filter'
 
 const Container = styled.section`
         
@@ -79,6 +80,15 @@ export const filterInFilter = (data, array) => {
         return array.filter( dt => dt.node.frontmatter.techUsed.some( tech => tech.toUpperCase() === data.toUpperCase() ) )
 }
 
+export const formatSearch = arr => typeof arr !== 'object' ? 
+                                                        arr : 
+                                                        arr.map( item => item.replace(' ', '_') ).join('+')
+
+export const removeFromArray = ( arr, toRemove ) => {
+
+        return arr
+}
+
 // TODO: pagination
 // TODO: sorting
 // TODO: map projects.
@@ -101,6 +111,27 @@ const AllProjects = ({ data }) => {
 
                 navigate(`/projects?page=${i}`)
                 setPageNum( i )
+        }
+
+        const setFilter = flt => {
+                
+                if ( filterBy && typeof filterBy === 'object' && filterBy.some( item => item === flt ) )  {
+                        const newRemoved = filterBy.filter( item => item !== flt )
+                        const query = formatSearch( newRemoved )
+
+                        setFilterBy( newRemoved )
+                        navigate(`/projects?page=${pageNum}&filter=${query}`)
+
+                        return
+                }
+
+                // check if filterBy is an array -> format into a query.
+                // eslint-disable-next-line no-nested-ternary
+                const temp = !filterBy ? flt : ( typeof filterBy === 'object' ? [ ...filterBy, flt ] : [ filterBy, flt ] )
+                const query = formatSearch( temp )
+
+                setFilterBy( temp )
+                navigate(`/projects?page=${pageNum}&filter=${query}`)
         }
 
         const filterFunction = (full, filterState) => {
@@ -132,11 +163,15 @@ const AllProjects = ({ data }) => {
 
         useEffect(() => {
 
+                console.log('change')
                 filterAndPaginate( )
         }, [ pageNum, filterBy ])
 
+        console.log(store)
+
         return (
                 <Container className='wrap'>
+                        <Filter filter={filterBy} setFilter={setFilter} />
                         <ProjectCont>
                                 {
                                         items.length > 0 ? 
