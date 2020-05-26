@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { useLocation, useNavigate } from '@reach/router'
 
 import ProjectItem from './project-item-all'
+import Pagination from './pagination'
 
 const Container = styled.section`
         
@@ -91,10 +92,16 @@ const AllProjects = ({ data }) => {
         const { page, filter } = reformat(location.search)
         const navigate = useNavigate()
 
-        const [ pageNum, setPageNum ] = useState( page || 1 )
+        const [ pageNum, setPageNum ] = useState( parseInt(page, 10 ) || 1 )
         const [ filterBy, setFilterBy ] = useState( filter || '' )
         const [ store, setStore ] = useState([ ])
         const [ items, setItems ] = useState([ ])
+
+        const navigatePage = i => {
+
+                navigate(`/projects?page=${i}`)
+                setPageNum( i )
+        }
 
         const filterFunction = (full, filterState) => {
 
@@ -128,7 +135,7 @@ const AllProjects = ({ data }) => {
                 filterAndPaginate( )
         }, [ pageNum, filterBy ])
 
-        console.log(items)
+        console.log(store)
 
         return (
                 <Container className='wrap'>
@@ -141,6 +148,7 @@ const AllProjects = ({ data }) => {
                                                 )
                                 }
                         </ProjectCont>
+                        <Pagination pageNum={pageNum} store={store} perPage={ITEM_PER_PAGE} navigatePage={navigatePage} />
                 </Container>
         )
 }
