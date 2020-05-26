@@ -156,7 +156,7 @@ const Hero = ({ heading, subheading, cta, canvas }) => {
                                         {cta}
                                 </Button>
                         </Items>
-                        <Laser id='laser' />
+                        {/* <Laser id='laser' /> */}
                 </Container>
           )
 }

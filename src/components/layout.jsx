@@ -142,7 +142,7 @@ const Layout = ({ children }) => {
                 @media screen and ( max-width: 464px ) {
                         
                         h1 {
-                                font-size: 60px;
+                                font-size: 55px;
                         }
 
                         h2 {

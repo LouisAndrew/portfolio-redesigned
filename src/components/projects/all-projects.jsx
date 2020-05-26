@@ -26,7 +26,7 @@ const ProjectCont = styled.div`
                 
         }
 
-        @media screen and ( max-width: 840px ) {
+        @media screen and ( max-width: 840px ), screen and ( max-width: 1100px ) and ( orientation: portrait ) {
 
                 .proj {
 
@@ -134,8 +134,6 @@ const AllProjects = ({ data }) => {
 
                 filterAndPaginate( )
         }, [ pageNum, filterBy ])
-
-        console.log(store)
 
         return (
                 <Container className='wrap'>
