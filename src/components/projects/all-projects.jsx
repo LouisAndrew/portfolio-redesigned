@@ -45,13 +45,17 @@ const ProjectCont = styled.div`
 
 export const reformat = location => {
 
+        // return if the url doesn't have any params
         if ( !location.includes('?') ) return { }
 
+        // split the location -> get url params then splitting multiple params (indicated with &)
         const query = location.split('?')[1]
         const splitMultiple = query.split('&')
 
+        // reduce the array into an object.
         return splitMultiple.reduce( (o, key) => {
-                
+
+                // splitting each parameter -> also replace spaced character on params(_) with blankspace ( )
                 const objKey = key.split('=')[0].replace('_', ' ')
                 const tempValue = key.split('=')[1].replace('_', ' ')
 
@@ -84,26 +88,45 @@ const AllProjects = ({ data }) => {
 
         const location = useLocation()
 
-        const { page, sort } = reformat(location.search)
+        const { page, filter } = reformat(location.search)
         const navigate = useNavigate()
 
         const [ pageNum, setPageNum ] = useState( page || 1 )
-        const [ sortBy, setSortBy ] = useState( sort || '' )
+        const [ filterBy, setFilterBy ] = useState( filter || '' )
         const [ store, setStore ] = useState([ ])
         const [ items, setItems ] = useState([ ])
 
-        const sortFunction = (full, sortState) => {
+        const filterFunction = (full, filterState) => {
 
-                return typeof sortState === 'object' ? sortState.reduce( (before, value) => filterInFilter( value, before ), full ) : filterInFilter( sortState, full )
+                return typeof filterState === 'object' ? filterState.reduce( (before, value) => filterInFilter( value, before ), full ) : filterInFilter( filterState, full )
         } 
 
+        const paginate = (perPage, itemStore, pageNumber) => {
+                const from = ( pageNumber - 1 ) * perPage
+                const to = from + perPage > itemStore.length - 1 ? itemStore.length : from + perPage
+
+                return itemStore.slice( from, to )
+        }       
+
+        const filterAndPaginate= () => {
+
+                const storeTemp = filterBy ? filterFunction( data, filterBy ) : data
+                const toDisplay = paginate( ITEM_PER_PAGE, storeTemp, pageNum )
+
+                setStore( storeTemp )
+                setItems( toDisplay )
+        }
+
         useEffect(() => {
 
-        }, [])
+                if ( !items ) 
+                        filterAndPaginate() 
+        }, [ ])
 
         useEffect(() => {
 
-        }, [ pageNum, sortBy ])
+                filterAndPaginate( )
+        }, [ pageNum, filterBy ])
 
         return (
                 <Container className='wrap'>
