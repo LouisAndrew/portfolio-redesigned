@@ -18,6 +18,7 @@ const Filter = ({ filter, setFilter }) => {
                                         node {
                                                 frontmatter {
                                                 name
+                                                icon
                                                 }
                                         }
                                 }
@@ -26,7 +27,7 @@ const Filter = ({ filter, setFilter }) => {
         ` )
 
         const { edges: data } = result.allMarkdownRemark
-        const techs = data && data.map( dt => dt.node.frontmatter.name )
+        const techs = data && data.map( dt => dt.node.frontmatter )
 
         return (
                 <Container>
@@ -37,6 +38,13 @@ const Filter = ({ filter, setFilter }) => {
 
 Filter.propTypes = {
 
+        filter: PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.arrayOf(
+                        PropTypes.string,
+                ),
+        ]).isRequired,
+        setFilter: PropTypes.func.isRequired,
 }
 
 export default Filter
