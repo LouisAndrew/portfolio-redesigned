@@ -14,7 +14,7 @@ const ProjectCont = styled.div`
         
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
         padding: 10% 0;
 
@@ -128,11 +128,17 @@ const AllProjects = ({ data }) => {
                 filterAndPaginate( )
         }, [ pageNum, filterBy ])
 
+        console.log(items)
+
         return (
                 <Container className='wrap'>
                         <ProjectCont>
                                 {
-                                        data && data.map( (dt, i) => <ProjectItem className='proj' key={i} projectName={dt.node.frontmatter.projectName} snapshot={dt.node.frontmatter.snapshot} /> )
+                                        items.length > 0 ? 
+                                                items.map( (dt, i) => <ProjectItem className='proj' key={i} projectName={dt.node.frontmatter.projectName} snapshot={dt.node.frontmatter.snapshot} /> )
+                                                : (
+                                                        <h2>No items found..</h2>
+                                                )
                                 }
                         </ProjectCont>
                 </Container>
