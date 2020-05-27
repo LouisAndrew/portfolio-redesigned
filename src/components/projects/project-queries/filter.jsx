@@ -7,6 +7,13 @@ import FilterBox from './filter-box'
 
 const Container = styled.div`
         
+        align-self: flex-end;
+        padding-top: 5%;
+
+        @media screen and ( max-width: 464px ) {
+                
+                padding-top: 15%;
+        }
 `
 
 const Filter = ({ filter, setFilter }) => {

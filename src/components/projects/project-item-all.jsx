@@ -16,6 +16,7 @@ const Container = styled.div`
         width: 45%;
         /* margin-bottom: 10%; */
         position: relative;
+        margin-bottom: 5%;
 
         ${({ theme }) => theme.center()};
         flex-direction: column;

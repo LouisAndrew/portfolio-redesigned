@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import Search from '../../../../static/assets/search.svg'
+
 const Container = styled.form`
 
         width: fit-content;
@@ -11,6 +13,20 @@ const Container = styled.form`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        & > label {
+
+                display: flex;
+                align-items: center;
+
+                width: fit-content;
+                white-space: nowrap;
+
+                #search {
+                        margin-right: 5px;
+                        fill: #fff;
+                }
+        }
 
         .techs-filter {
 
@@ -23,6 +39,7 @@ const Container = styled.form`
                 z-index: 4;
                 max-height: 0;
 
+                transition: .2s;
                 overflow: hidden;
                 background-color: ${({ theme }) => theme.dark};
 
@@ -30,11 +47,13 @@ const Container = styled.form`
 
                         max-height: 50vh;
                         overflow-y: scroll;
+
+                        -ms-overflow-style: none;
                 }
 
-                &::-webkit-scrollbar-track {
+                &::-webkit-scrollbar {
 
-                        background-color: ${({ theme }) => theme.bg};
+                        display: none;
                 }
         }
 
@@ -64,6 +83,15 @@ const Label = styled.label`
                 cursor: pointer;
                 transform: translateY(-10px);
         }
+
+        @media screen and ( max-width: 464px ) {
+
+                padding: 10% 10%;
+
+                &:hover {
+                        transform: translate(0) !important;
+                }
+        }
 `
 
 const FilterBox = ({ techs, setFilter }) => {
@@ -76,7 +104,10 @@ const FilterBox = ({ techs, setFilter }) => {
         return (
                 <Container>
                         <input type='checkbox' />
-                        <label onClick={setActive}>filter by:</label>
+                        <label onClick={setActive}>
+                                <Search id='search' />
+                                filter by 
+                        </label>
                         <div className='techs-filter'>
                                 {
                                         techs && techs.map( (tech, i) => (

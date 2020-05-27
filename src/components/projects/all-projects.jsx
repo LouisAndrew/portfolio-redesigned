@@ -9,7 +9,11 @@ import Filter from './project-queries/filter'
 
 const Container = styled.section`
         
+        ${({ theme }) => theme.center()};
+        flex-direction: column;
+
         background-color: ${({ theme }) => theme.bg};
+        min-height: 70vh;
 `
 
 const ProjectCont = styled.div`
@@ -17,8 +21,9 @@ const ProjectCont = styled.div`
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
+        width: 100%;
 
-        padding: 10% 0;
+        padding: 5% 0 10%;
 
         .proj {
 
@@ -83,11 +88,6 @@ export const filterInFilter = (data, array) => {
 export const formatSearch = arr => typeof arr !== 'object' ? 
                                                         arr : 
                                                         arr.map( item => item.replace(' ', '_') ).join('+')
-
-export const removeFromArray = ( arr, toRemove ) => {
-
-        return arr
-}
 
 // TODO: pagination
 // TODO: sorting

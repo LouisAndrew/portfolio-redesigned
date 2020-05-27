@@ -26,8 +26,5 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
       onClick={[Function]}
     />
   </div>
-  <test-file-stub
-    id="laser"
-  />
 </section>
 `;
