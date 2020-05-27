@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import FilterBox from './filter-box'
+import FilterIndi from './filter_indicatior'
 
 const Container = styled.div`
         
@@ -39,18 +40,16 @@ const Filter = ({ filter, setFilter }) => {
         return (
                 <Container>
                         { techs && <FilterBox setFilter={setFilter} techs={techs} /> }
+                        <FilterIndi filter={filter} />
                 </Container>
         )
 }
 
 Filter.propTypes = {
 
-        filter: PropTypes.oneOfType([
+        filter: PropTypes.arrayOf(
                 PropTypes.string,
-                PropTypes.arrayOf(
-                        PropTypes.string,
-                ),
-        ]).isRequired,
+        ).isRequired,
         setFilter: PropTypes.func.isRequired,
 }
 

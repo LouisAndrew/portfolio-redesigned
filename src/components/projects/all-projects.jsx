@@ -103,7 +103,7 @@ const AllProjects = ({ data }) => {
         const navigate = useNavigate()
 
         const [ pageNum, setPageNum ] = useState( parseInt(page, 10 ) || 1 )
-        const [ filterBy, setFilterBy ] = useState( filter || '' )
+        const [ filterBy, setFilterBy ] = useState( typeof filter === 'string' ? [ filter ] : filter || [ ] )
         const [ store, setStore ] = useState([ ])
         const [ items, setItems ] = useState([ ])
 
@@ -115,7 +115,7 @@ const AllProjects = ({ data }) => {
 
         const setFilter = flt => {
                 
-                if ( filterBy && typeof filterBy === 'object' && filterBy.some( item => item === flt ) )  {
+                if ( filterBy && filterBy.some( item => item === flt ) )  {
                         const newRemoved = filterBy.filter( item => item !== flt )
                         const query = formatSearch( newRemoved )
 
@@ -127,7 +127,7 @@ const AllProjects = ({ data }) => {
 
                 // check if filterBy is an array -> format into a query.
                 // eslint-disable-next-line no-nested-ternary
-                const temp = !filterBy ? flt : ( typeof filterBy === 'object' ? [ ...filterBy, flt ] : [ filterBy, flt ] )
+                const temp = [ ...filterBy, flt ]
                 const query = formatSearch( temp )
 
                 setFilterBy( temp )
@@ -163,11 +163,9 @@ const AllProjects = ({ data }) => {
 
         useEffect(() => {
 
-                console.log('change')
                 filterAndPaginate( )
         }, [ pageNum, filterBy ])
 
-        console.log(store)
 
         return (
                 <Container className='wrap'>
