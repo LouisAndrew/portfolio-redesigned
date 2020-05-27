@@ -36,7 +36,7 @@ const Container = styled.div`
         }
 `
 
-const Tech = ({ techName }) => {
+const Tech = ({ techName, className, onClick }) => {
         
         const tech = useTechs(techName)
 
@@ -44,7 +44,7 @@ const Tech = ({ techName }) => {
         // const { icon, name } = data && data
 
         return (
-                <Container>
+                <Container className={className} onClick={onClick}>
                         {
                                 data && (
                                         <>
@@ -58,7 +58,16 @@ const Tech = ({ techName }) => {
 }
 
 Tech.propTypes = {
+
         techName: PropTypes.string.isRequired,
+        className: PropTypes.string,
+        onClick: PropTypes.func,
+}
+
+Tech.defaultProps = { 
+
+        className: '',
+        onClick: () => { }
 }
 
 export default Tech

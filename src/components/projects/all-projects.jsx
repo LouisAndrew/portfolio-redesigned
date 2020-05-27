@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from '@reach/router'
 import ProjectItem from './project-item-all'
 import Pagination from './project-queries/pagination'
 import Filter from './project-queries/filter'
+import FilterIndi from './project-queries/filter_indicatior'
 
 const Container = styled.section`
         
@@ -166,10 +167,10 @@ const AllProjects = ({ data }) => {
                 filterAndPaginate( )
         }, [ pageNum, filterBy ])
 
-
         return (
                 <Container className='wrap'>
-                        <Filter filter={filterBy} setFilter={setFilter} />
+                        <Filter setFilter={setFilter} />
+                        <FilterIndi filter={filterBy} setFilter={setFilter} />
                         <ProjectCont>
                                 {
                                         items.length > 0 ? 
