@@ -2,32 +2,26 @@
 templateKey: index
 title: Portfolio Site!
 heading: Hello.
-subheading: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem gravida
-  eu sagittis habitasse hendrerit eget vel. Sagittis ultrices euismod cras
-  elementum.
+subheading: Front ent developer, at your service 🙌
 cta: check my projects.
 intro:
-  desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  desc: I am a computer science student at HTW Berlin. I am really passionate in
+    building beautiful and fast web applications.
   heading: WHO AM I?
-  image: assets/img_9456.jpeg
+  image: assets/1525702203099_edited-2.png
   headingList:
     - h: WHO
     - h: AM I?
 expertees:
   heading: WHAT CAN I OFFER?
   myExpertees:
-    - heading: Web Design
+    - heading: clean and modern web design.
       image: assets/whh_design.svg
       desc: " "
-    - heading: Front End
+    - heading: responsive and functional web applications
       image: assets/bx_bx-code-alt.svg
       desc: " "
-    - heading: KEakdlaad
+    - heading: content driven websites
       desc: " "
       image: assets/gridicons_product.svg
   headingList:
@@ -43,7 +37,7 @@ contact:
       redirect: false
       icon: assets/alternate_email-24px-1.svg
     - social: phone
-      value: +49 - 1786520738
+      value: +49 1786520738
       link: " "
       redirect: false
       icon: assets/call-24px-1.svg
