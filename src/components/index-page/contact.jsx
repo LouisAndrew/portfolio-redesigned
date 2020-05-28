@@ -102,12 +102,12 @@ const Contact = ({ contactLists, heading, subheading, headingList }) => {
 
         return (
                 <Container id='contact' className='wrap'>
-                        <Heading>
+                        <Heading data-testid='con-heading'>
                                 {
-                                        headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
+                                        headingList.map( (head, i) => <h1 key={head}>{head.h}</h1> )
                                 }
                         </Heading>
-                        <Contacts>
+                        <Contacts data-testid='con-list'>
                                 {
                                         contactLists.map( (contact, i) => <ContactItem key={i} {...contact} /> )
                                 }
@@ -163,7 +163,12 @@ ContactItem.propTypes = {
         social: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
         value: PropTypes.string.isRequired,
-        redirect: PropTypes.bool.isRequired
+        redirect: PropTypes.bool,
+}
+
+ContactItem.defaultProps = {
+
+        redirect: false,
 }
 
 export default Contact

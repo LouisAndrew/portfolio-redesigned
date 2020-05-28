@@ -167,8 +167,7 @@ export const ExperteeItem = ({ desc, heading, image }) => {
                 <ExpItem>
                         <img src={image} alt={heading} />
                         <div>
-                                <h3>{heading}</h3>
-                                <p>{desc}</p>
+                                <p>{heading}</p>
                         </div>
                 </ExpItem>
         )
