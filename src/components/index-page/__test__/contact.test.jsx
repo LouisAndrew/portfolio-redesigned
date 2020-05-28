@@ -42,7 +42,7 @@ describe('Contact component on landing page', () => {
 
         it('matches snapshot', () => {
 
-                const tree = renderer.create( <Contact headingList={headingList} contactLists={contactLists} /> )
+                const tree = renderer.create( <Contact headingList={headingList} contactLists={contactLists} /> ).toJSON()
                 expect(tree).toMatchSnapshot()
         })
 })

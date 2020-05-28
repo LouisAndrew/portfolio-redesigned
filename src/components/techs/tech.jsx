@@ -44,7 +44,7 @@ const Tech = ({ techName, className, onClick }) => {
         // const { icon, name } = data && data
 
         return (
-                <Container className={className} onClick={onClick}>
+                <Container data-testid='tech' className={className} onClick={onClick}>
                         {
                                 data && (
                                         <>

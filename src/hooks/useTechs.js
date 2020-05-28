@@ -21,7 +21,7 @@ const useTechs = techName => {
         
     ` )
 
-    const { edges } = result.allMarkdownRemark
+    const edges = result && result.allMarkdownRemark.edges
 
     const filter = (name, array) => {
 
@@ -30,7 +30,7 @@ const useTechs = techName => {
 
     useEffect(() => {
 
-        if ( !tech.node ) {
+        if ( !tech.node && edges ) {
 
             const temp = filter(techName, edges)
             setTech( temp.length > 0 ? temp[0] : false )
