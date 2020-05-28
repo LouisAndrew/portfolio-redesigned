@@ -105,7 +105,7 @@ const Links = props => (
                         </Link>
                 </li>
                 <li>
-                        <Link to='/#hero'>
+                        <Link to='/#about'>
                                 About
                         </Link>
                 </li>

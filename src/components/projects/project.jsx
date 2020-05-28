@@ -14,6 +14,7 @@ import Carousel from './carousel/carousel'
 const Container = styled.section`
         
         background-color: ${({ theme }) => theme.bg};
+        padding-top: 12% !important;
 
         p:last-child {
                 margin-top: 5%;
@@ -62,7 +63,7 @@ const ButtonsWr = styled.div`
 const ProjectImage = styled.div`
         
         margin: 8% 0 12%;
-        padding: 5%;
+        padding: 0 5% 5%;
         border-radius: 8px;
         width: 100%;
         position: relative;

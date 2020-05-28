@@ -99,7 +99,7 @@ const Intro = ({ desc, image, heading, headingList }) => {
         const fluid = ( img && img.node )? img.node.childImageSharp.fluid : { }
 
         return (
-                <Container className='wrap'>
+                <Container id='about' className='wrap'>
                         <Corner id='corner' />
                         <div data-testid='intro-heading' className='heading'>
                                 {

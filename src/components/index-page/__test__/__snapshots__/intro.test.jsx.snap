@@ -3,6 +3,7 @@
 exports[`Intro / about me element on landing page. matches snapshot 1`] = `
 <section
   className="sc-AxjAm nIveR wrap"
+  id="about"
 >
   <test-file-stub
     id="corner"

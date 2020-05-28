@@ -105,9 +105,9 @@ const ExpItem = styled.div`
 
         img {
                 
-                margin-right: 5vw;
-                height: 150px;
-                width: 150px;
+                margin-right: 2vw;
+                height: 75px;
+                width: 75px;
         }       
 
         @media screen and ( max-width: 840px ) {
@@ -118,8 +118,8 @@ const ExpItem = styled.div`
 
                 img {
 
-                        height: 150px;
-                        width: 150px;
+                        height: 125px;
+                        width: 125px;
 
                         margin-left: 0;
                         margin-right: 10%;
@@ -130,8 +130,8 @@ const ExpItem = styled.div`
                 
                 img {
 
-                        height: 75px;
-                        width: 75px;
+                        height: 50px;
+                        width: 50px;
 
                         margin-right: 10%;
                 }

@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import useGoogleFonts from '../hooks/useGoogleFonts'
 import Nav from './nav'
+import Footer from './footer'
 
 const Layout = ({ children }) => {
 
@@ -71,6 +72,7 @@ const Layout = ({ children }) => {
 
                 body {
                         overflow-x: hidden;
+                        max-width: 100vw;
                 }
 
                 h1 {
@@ -106,6 +108,7 @@ const Layout = ({ children }) => {
                 .wrap {
 
                         padding: 8% 12%;
+                        max-width: 100vw;
                         
                         &:not(:first-child) {
                                 margin-top: -1%;
@@ -172,6 +175,7 @@ const Layout = ({ children }) => {
                                 <main>
                                         <Nav />
                                         { children }
+                                        <Footer />
                                 </main>
                         </ThemeProvider>
                 </>
