@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
-const Butt = styled.button`
+const Butt = styled(motion.button)`
         
         outline: none;
         padding: .5vw 1vw;

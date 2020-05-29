@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
 import Hero from '../components/index-page/hero'
 import Layout from '../components/layout'
@@ -11,11 +12,15 @@ import Intro from '../components/index-page/intro'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact, intro }) => (
       <Layout>
-            <Hero heading={heading} subheading={subheading} cta={cta} canvas />
-            <Intro {...intro} />
-            <Expertees {...expertees} />
-            <ProjectShowcase />
-            <Contact {...contact} />
+            <motion.div
+                  exit={{ opacity: 0 }}
+            >
+                  <Hero heading={heading} subheading={subheading} cta={cta} canvas />
+                  <Intro {...intro} />
+                  <Expertees {...expertees} />
+                  <ProjectShowcase />
+                  <Contact {...contact} />
+            </motion.div>
       </Layout>
 )
 

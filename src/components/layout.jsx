@@ -2,6 +2,7 @@ import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import { AnimatePresence } from 'framer-motion'
 
 import useGoogleFonts from '../hooks/useGoogleFonts'
 import Nav from './nav'
@@ -173,9 +174,11 @@ const Layout = ({ children }) => {
                         <Global />
                         <ThemeProvider theme={theme}>
                                 <main>
-                                        <Nav />
-                                        { children }
-                                        <Footer />
+                                        <AnimatePresence exitBeforeEnter>
+                                                <Nav />
+                                                { children }
+                                                <Footer />
+                                        </AnimatePresence>
                                 </main>
                         </ThemeProvider>
                 </>

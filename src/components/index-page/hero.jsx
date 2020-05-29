@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import PropTypes from 'prop-types'
 import { useNavigate } from '@reach/router'
 import Particles from 'react-particles-js'
+import { motion } from 'framer-motion'
 
 import Laser from '../../../static/assets/decorations/LaserBeam.svg'
 import Button from '../button'
@@ -63,7 +64,7 @@ const animation = props => keyframes`
         }
 `
 
-const Items = styled.div`
+const Items = styled(motion.div)`
         
         width: 50%;
         /* padding-right: 5%; */
@@ -118,6 +119,51 @@ const Hero = ({ heading, subheading, cta, canvas }) => {
 
         const navigate = useNavigate()
 
+        const animateHeading = {
+
+                initial: {
+                        x: -100,
+                        opacity: 0,
+                },
+                animate: {
+                        x: 0,
+                        opacity: 1,
+                        transition: {
+                                duration: .5,
+                                delay: .2,
+                                easing: [ .5, -.6, 1 ]
+                        }
+                }
+        }
+
+        const stagger = {
+
+                animate: {
+                        opacity: 1,
+                        transition: {
+                                staggerChildren: .2
+                        }
+                },
+                initial: {
+                        opacity: 0
+                }
+        }
+
+        const animateFadeIn = {
+
+                initial: {
+                        opacity: 0,
+                        y: 100
+                },
+                animate: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                                duration: 1
+                        }
+                }
+        }
+
         return (
                 <Container id='particles-js' className='wrap'>
                         { canvas && (
@@ -149,10 +195,26 @@ const Hero = ({ heading, subheading, cta, canvas }) => {
                                 }}
                         /> 
                         )}
-                        <Items>
-                                <h1 data-testid='hero-heading' id='hero-heading'>{heading}</h1>
-                                <p data-testid='hero-par'>{subheading}</p>
-                                <Button color='ft' bColor='red' onClick={() => navigate('/projects?page=1')}>
+                        <Items variants={stagger} animate='animate' initial='initial'>
+                                <motion.h1 
+                                        data-testid='hero-heading' 
+                                        id='hero-heading'
+                                        variants={animateHeading}
+                                >
+                                        {heading}
+                                </motion.h1>
+                                <motion.p 
+                                        data-testid='hero-par'
+                                        variants={animateFadeIn}
+                                >
+                                        {subheading}
+                                </motion.p>
+                                <Button 
+                                        color='ft' 
+                                        bColor='red' 
+                                        onClick={() => navigate('/projects?page=1')}
+                                        variants={animateFadeIn}
+                                >
                                         {cta}
                                 </Button>
                         </Items>

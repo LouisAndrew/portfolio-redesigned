@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
 import Layout from '../../components/layout'
 import AllProjects from '../../components/projects/all-projects'
@@ -11,7 +12,12 @@ const ProjectsPage = ({ data }) => {
 
         return (
                 <Layout>
-                        <AllProjects data={edges} />
+                        <motion.div
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 5 }}
+                        >
+                                <AllProjects data={edges} />
+                        </motion.div>
                 </Layout>
         )
 }

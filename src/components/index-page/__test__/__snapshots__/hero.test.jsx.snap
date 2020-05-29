@@ -6,11 +6,17 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
   id="particles-js"
 >
   <div
-    className="sc-AxhCb evnbtu"
+    className="sc-AxhCb bLOKru"
   >
     <h1
       data-testid="hero-heading"
       id="hero-heading"
+      style={
+        Object {
+          "opacity": 1,
+          "transform": "translateY(10px) translateZ(0)",
+        }
+      }
     >
       Hello
     </h1>

@@ -5,6 +5,7 @@ exports[`matches snapshot 1`] = `
   className="sc-AxjAm hNoFXg"
   color="def"
   data-testid="button"
+  style={Object {}}
 >
   Test
 </button>

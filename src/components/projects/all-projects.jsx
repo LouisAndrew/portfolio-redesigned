@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useLocation, useNavigate } from '@reach/router'
+import { motion } from 'framer-motion'
 
 import ProjectItem from './project-item-all'
 import Pagination from './project-queries/pagination'
 import Filter from './project-queries/filter'
 import FilterIndi from './project-queries/filter_indicatior'
 
-const Container = styled.section`
+const Container = styled(motion.section)`
         
         ${({ theme }) => theme.center()};
         flex-direction: column;
@@ -168,7 +169,10 @@ const AllProjects = ({ data }) => {
         }, [ pageNum, filterBy ])
 
         return (
-                <Container className='wrap'>
+                <Container 
+                        className='wrap'
+                        exit={{ opacity: 0, x: 100 }}
+                >
                         <Filter setFilter={setFilter} />
                         <FilterIndi filter={filterBy} setFilter={setFilter} />
                         <ProjectCont>
