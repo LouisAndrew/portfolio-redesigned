@@ -109,6 +109,22 @@ const AllProjects = ({ data }) => {
         const [ store, setStore ] = useState([ ])
         const [ items, setItems ] = useState([ ])
 
+        const stagger = {
+
+                initial: {},
+                animate: {
+                        transition: {
+                                staggerChildren: .1
+                        }
+                }
+        }
+
+        const fadeIn = {
+
+                initial: { opacity: 0 },
+                animate: { opacity: 1 }
+        }
+
         const navigatePage = i => {
 
                 navigate(`/projects?page=${i}`)
@@ -172,13 +188,16 @@ const AllProjects = ({ data }) => {
                 <Container 
                         className='wrap'
                         exit={{ opacity: 0, x: 100 }}
+                        variants={stagger}
+                        animate='animate'
+                        initial='initial'
                 >
                         <Filter setFilter={setFilter} />
                         <FilterIndi filter={filterBy} setFilter={setFilter} />
                         <ProjectCont>
                                 {
                                         items.length > 0 ? 
-                                                items.map( (dt, i) => <ProjectItem className='proj' key={i} projectName={dt.node.frontmatter.projectName} snapshot={dt.node.frontmatter.snapshot} /> )
+                                                items.map( (dt, i) => <ProjectItem variants={fadeIn} className='proj' key={dt} projectName={dt.node.frontmatter.projectName} snapshot={dt.node.frontmatter.snapshot} /> )
                                                 : (
                                                         <h2>No items found..</h2>
                                                 )
