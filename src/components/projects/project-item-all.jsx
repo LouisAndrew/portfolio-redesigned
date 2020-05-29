@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { useNavigate } from '@reach/router'
+import { motion } from 'framer-motion'
 
 import useImages from '../../hooks/useImages'
 
@@ -11,7 +12,7 @@ import useImages from '../../hooks/useImages'
 //         width: 30%;
 // `
 
-const Container = styled.div`
+const Container = styled(motion.div)`
         
         width: 45%;
         /* margin-bottom: 10%; */
@@ -80,7 +81,7 @@ const Container = styled.div`
         }
 `
 
-const Project = ({ projectName, snapshot, hoverColor, className }) => {
+const Project = ({ projectName, snapshot, hoverColor, className, animate, initial, variants }) => {
 
         const navigate = useNavigate()
         const trimAssets = str => str && str.includes('assets/') ? str.split('assets/')[1] : str
@@ -89,7 +90,14 @@ const Project = ({ projectName, snapshot, hoverColor, className }) => {
         const fluid = img && img.node ? img.node.childImageSharp.fluid : { }
 
         return (
-                <Container className={className} onClick={() => navigate(`/projects/${projectName.toLowerCase()}`)} $hoverColor={hoverColor}>
+                <Container
+                        className={className} 
+                        onClick={() => navigate(`/projects/${projectName.toLowerCase()}`)} 
+                        $hoverColor={hoverColor}
+                        variants={variants}
+                        animate={animate}
+                        initial={initial}
+                >
                         <div className='img'>
                                 <Img fluid={fluid} />
                         </div>
@@ -105,12 +113,20 @@ Project.propTypes = {
         snapshot: PropTypes.string.isRequired,
         hoverColor: PropTypes.string,
         className: PropTypes.string,
+        animate: PropTypes.string,
+        initial: PropTypes.string,
+        variants: PropTypes.objectOf(
+                PropTypes.object,
+        ),
 }
 
 Project.defaultProps = {
 
         hoverColor: 'rgba( 0, 0, 0, .25 );',
-        className: ''
+        className: '',
+        animate: '',
+        initial: '',
+        variants: { },
 }
 
 export default Project

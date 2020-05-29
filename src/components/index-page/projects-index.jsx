@@ -1,16 +1,15 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
-import PropTypes from 'prop-types'
 import { useNavigate } from '@reach/router'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-import useImages from '../../hooks/useImages'
 import Button from '../button'
 import Blob from '../../../static/assets/decorations/Blob.svg'
 import Project from '../projects/project-item-all'
 
-const Container = styled.div`
+const Container = styled(motion.div)`
         
         background-color: ${({ theme }) => theme.bg};
 
@@ -118,13 +117,38 @@ const ProjectShowcase = () => {
 
         const navigate = useNavigate()
         const projects = data.allMarkdownRemark.edges
+        const [ ref, inView ] = useInView({
+                threshold: .5
+        })
 
         const clickShowAll = () => {
                 navigate('/projects?page=1')
         }
 
+        const stagger = {
+
+                initial: {
+
+                },
+                animate: {
+                        transition: {
+                                staggerChildren: .1
+                        }
+                }
+        }
+
+        const fadeIn = {
+
+                initial: {
+                        opacity: 0
+                },
+                animate: {
+                        opacity: 1
+                }
+        }
+
         return (
-                <Container className='wrap'>
+                <Container ref={ref} className='wrap' variants={stagger} animate={inView ? 'animate' : 'initial'} initial='initial'>
                         <div data-testid='proj-heading' className='header'>
                                 <h1>MY </h1>
                                 <h1>PROJ</h1>
@@ -134,7 +158,7 @@ const ProjectShowcase = () => {
                                 <Button onClick={clickShowAll}>SHOW ALL</Button>
                                 <Projects>
                                         {
-                                                projects.map( (project, i) => <Project key={i} {...project.node.frontmatter} /> )
+                                                projects.map( (project, i) => <Project variants={fadeIn} key={project} {...project.node.frontmatter} /> )
                                         }
                                 </Projects>
                         </div>

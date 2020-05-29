@@ -21,6 +21,12 @@ exports[`Intro / about me element on landing page. matches snapshot 1`] = `
   </div>
   <div
     className="sc-AxirZ hEHatK"
+    style={
+      Object {
+        "opacity": 0,
+        "transform": "translateY(-100px) translateZ(0)",
+      }
+    }
   >
     <div
       className="img"

@@ -214,6 +214,9 @@ Project.propTypes = {
         techUsed: PropTypes.arrayOf(
               PropTypes.string.isRequired,
         ).isRequired,
+        preview: PropTypes.arrayOf(
+                PropTypes.string.isRequired,
+        ).isRequired,
   }
   
   Project.defaultProps = {
