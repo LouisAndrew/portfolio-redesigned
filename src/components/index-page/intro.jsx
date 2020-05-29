@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import useImages from '../../hooks/useImages'
 import Corner from '../../../static/assets/decorations/corner.svg'
@@ -49,7 +51,7 @@ const Container = styled.section`
         }
 `
 
-const Desc = styled.div`
+const Desc = styled(motion.div)`
 
         margin-left: 8vw;
         width: 50%;
@@ -98,15 +100,35 @@ const Intro = ({ desc, image, heading, headingList }) => {
         const img = image && useImages( imageSplitter(image) )
         const fluid = ( img && img.node )? img.node.childImageSharp.fluid : { }
 
+        const [ ref, inView, entry ] = useInView({
+                threshold: .6
+        })
+
+        const anim = {
+
+                fadeIn: {
+                        opacity: 1,
+                        y: 0,
+                },
+                fadeOut: {
+                        opacity: 0,
+                        y: -100,
+                }
+        }
+
         return (
-                <Container id='about' className='wrap'>
+                <Container ref={ref} id='about' className='wrap'>
                         <Corner id='corner' />
                         <div data-testid='intro-heading' className='heading'>
                                 {
                                         headingList && headingList.map( (head, i) => <h1 key={i}>{head.h}</h1> )
                                 }
                         </div>
-                        <Desc>
+                        <Desc
+                                variants={anim}
+                                initial='fadeOut'
+                                animate={inView ? 'fadeIn' : 'fadeOut'}
+                        >
                                 <div className='img'>
                                         { fluid && <Img fluid={fluid} /> }
                                 </div>

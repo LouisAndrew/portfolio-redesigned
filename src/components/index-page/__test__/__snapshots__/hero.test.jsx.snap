@@ -6,15 +6,20 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
   id="particles-js"
 >
   <div
-    className="sc-AxhCb bLOKru"
+    className="sc-AxhCb evnbtu"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
   >
     <h1
       data-testid="hero-heading"
       id="hero-heading"
       style={
         Object {
-          "opacity": 1,
-          "transform": "translateY(10px) translateZ(0)",
+          "opacity": 0,
+          "transform": "translateX(-100px) translateZ(0)",
         }
       }
     >
@@ -22,6 +27,12 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
     </h1>
     <p
       data-testid="hero-par"
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateY(100px) translateZ(0)",
+        }
+      }
     >
       Test paragraph
     </p>
@@ -30,6 +41,12 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
       color="ft"
       data-testid="button"
       onClick={[Function]}
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateY(100px) translateZ(0)",
+        }
+      }
     />
   </div>
 </section>
