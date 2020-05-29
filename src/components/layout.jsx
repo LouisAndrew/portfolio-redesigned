@@ -6,7 +6,8 @@ import { AnimatePresence } from 'framer-motion'
 
 import useGoogleFonts from '../hooks/useGoogleFonts'
 import Nav from './nav'
-import Footer from './footer'
+// import Footer from './footer'
+import Footer from './footer-rd'
 
 const Layout = ({ children }) => {
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
@@ -50,9 +50,18 @@ const LinkWr = styled.ul`
                 text-decoration: none;
                 transition: .2s;
 
+                font-family: 'Open Sans', sans-serif !important;
+                font-weight: 300 !important;
+                font-size: 20px;
+
                 &:hover {
 
                         border-color: ${({ theme }) => theme.ft};
+                }
+
+                @media screen and ( max-width: 840px ) {
+                        
+                        font-size: 16px;
                 }
         }
 
@@ -86,12 +95,30 @@ const LinkWr = styled.ul`
 
 const Nav = () => {
 
-        const clickMenu = () => document.getElementById('links') && document.getElementById('links').classList.toggle('active')
+        const [ menuMobileActive, setMenuMobileActive ] = useState(false)
+
+        const clickMenu = () => {
+
+                setMenuMobileActive( !menuMobileActive )
+        }
+
+        useEffect(() => {
+
+                const links = document.getElementById('links')
+
+                if ( menuMobileActive ) {
+
+                        links.addEventListener('click', () => {
+                                setMenuMobileActive(false)
+                                links.removeEventListener('click', () => {})
+                        })
+                }
+        }, [ menuMobileActive ])
 
         return (
                 <Container className='wrap'>
                         <Logo id='logo' />
-                        <Links id='links' />
+                        <Links id='links' className={menuMobileActive ? 'active' : ''} />
                         <Button onClick={clickMenu} id='menu' bColor='bg' color='ft'>MENU</Button>
                 </Container>
         )
