@@ -59,18 +59,16 @@ const Butt = styled(motion.button)`
         }
 `
 
-const Button = props => {
+const Button = props => (
 
-        return (
+        // eslint-disable-next-line react/destructuring-assignment
+        <Butt {...props} $bColor={props.bColor} $color={props.color} data-testid='button'>
+        {
                 // eslint-disable-next-line react/destructuring-assignment
-                <Butt {...props} $bColor={props.bColor} $color={props.color} data-testid='button'>
-                        {
-                                // eslint-disable-next-line react/destructuring-assignment
-                                props.children
-                        }
-                </Butt>
-        )
-}
+                props.children
+        }
+        </Butt>
+)
 
 Button.propTypes = {
 

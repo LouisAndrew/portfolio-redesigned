@@ -24,7 +24,8 @@ it('renders button correctly', () => {
 
 it('matches snapshot', () => {
 
+        const ref = React.createRef()
         const text = 'Test'
-        const tree = renderer.create( <Button>{text}</Button> ).toJSON()
+        const tree = renderer.create( <Button ref={ref}>{text}</Button> ).toJSON()
         expect(tree).toMatchSnapshot()
 })

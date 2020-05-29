@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { intersectionMockInstance } from 'react-intersection-observer/test-utils'
 
 import Intro from '../intro'
 
@@ -25,15 +26,17 @@ describe('Intro / about me element on landing page.', () => {
 
         const renderWithStyledTheme = ui => <ThemeProvider theme={theme}>{ui}</ThemeProvider> 
 
+        // TODO create mock for intersection observer.
+
         it('renders without crashing', () => {
 
                 const div = document.createElement('div')
-                ReactDOM.render(renderWithStyledTheme(<Intro />), div)
+                ReactDOM.render( renderWithStyledTheme(<Intro />), div )
         })
 
         it('renders correctly', () => {
 
-                const { getByTestId, get } = render( renderWithStyledTheme(<Intro heading={heading} headingList={headingList} desc={par} image={image} />) )
+                const { getByTestId } = render( renderWithStyledTheme(<Intro heading={heading} headingList={headingList} desc={par} image={image} />) )
 
                 const hdList = getByTestId('intro-heading')
 
@@ -48,7 +51,8 @@ describe('Intro / about me element on landing page.', () => {
 
         it('matches snapshot', () => {
 
-                const tree = renderer.create( renderWithStyledTheme(<Intro heading={heading} headingList={headingList} desc={par} image={image} />) )
+                const ref = React.createRef()
+                const tree = renderer.create( renderWithStyledTheme(<Intro ref={ref} heading={heading} headingList={headingList} desc={par} image={image} />) )
 
                 expect(tree).toMatchSnapshot()
         })

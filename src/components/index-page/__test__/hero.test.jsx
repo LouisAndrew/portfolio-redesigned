@@ -36,8 +36,9 @@ describe('Hero component on landing page.', () => {
         })
 
         it('matches snapshot', () => {
-                
-                const tree = renderer.create( renderWithRouter( renderWithStyledTheme( <Hero heading={mainText} subheading={parText} /> ) ) ).toJSON()
+
+                const ref = React.createRef()
+                const tree = renderer.create( renderWithRouter( renderWithStyledTheme( <Hero ref={ref} heading={mainText} subheading={parText} /> ) ) ).toJSON()
 
                 expect(tree).toMatchSnapshot()
         })
