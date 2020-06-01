@@ -6,6 +6,7 @@ const Container = styled.section`
         
         background-color: ${({ theme }) => theme.bg};
         display: flex;
+        padding-bottom: 15% !important;
 
         & > div {
                 width: 50%;
@@ -44,8 +45,6 @@ const Contacts = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
-        padding-left: 10%;
 /* 
         @media screen and ( max-width: 840px ) {
                 
@@ -53,8 +52,6 @@ const Contacts = styled.div`
         } */
 
         @media screen and ( max-width: 840px ) {
-
-                padding-left: 0;
 
                 align-items: center;
         }
