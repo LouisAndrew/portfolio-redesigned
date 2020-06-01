@@ -14,7 +14,8 @@ import Carousel from './carousel/carousel'
 const Container = styled.section`
         
         background-color: ${({ theme }) => theme.bg};
-        padding-top: 12% !important;
+        padding-top: 8% !important;
+        padding-bottom: 8% !important;
 
         p:last-child {
                 margin-top: 5%;
@@ -88,22 +89,22 @@ const ProjectImage = styled.div`
         #top {
 
                 position: absolute;
-                transform: scale(.9) translateY(10%);
-                top: -4%;
-                left: -4%;
+                transform: scale(.9) translateY(10%) rotateY(180deg);
+                top: -6%;
+                right: -6%;
 
                 @media screen and ( max-width: 1100px ) {
                         
-                        left: -4%;
+                        right: -4%;
                 }
         }
 
         #bot {
 
                 position: absolute;
-                transform: scale(.9) translateY(-10%);
-                bottom: -4%;
-                right: -4%;
+                transform: scale(.9) translateY(-10%) rotateY(180deg);
+                bottom: -6%;
+                left: -6%;
 
         }
 
@@ -116,11 +117,11 @@ const ProjectImage = styled.div`
                 }
 
                 #top {
-                        transform: scale(.8) translate(-15%, -10%);
+                        transform: scale(.8) translate(15%, -10%) rotateY(180deg);
                 }
 
                 #bot {
-                        transform: scale(.8) translate(15%, 15%);
+                        transform: scale(.8) translate(-15%, 10%) rotateY(180deg);
                 }
         }
 
@@ -133,11 +134,11 @@ const ProjectImage = styled.div`
                 }
 
                 #top {
-                        transform: scale(.6) translate(-40%, -40%);
+                        transform: scale(.6) translate(40%, -30%) rotateY(180deg);
                 }
 
                 #bot {
-                        transform: scale(.6) translate(40%, 40%);
+                        transform: scale(.6) translate(-40%, 30%) rotateY(180deg);
                 }
         }
 `

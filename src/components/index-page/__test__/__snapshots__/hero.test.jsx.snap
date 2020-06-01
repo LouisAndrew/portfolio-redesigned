@@ -6,7 +6,7 @@ exports[`Hero component on landing page. matches snapshot 1`] = `
   id="particles-js"
 >
   <div
-    className="sc-AxhCb evnbtu"
+    className="sc-AxhCb kjAAwy"
     style={
       Object {
         "opacity": 0,

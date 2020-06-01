@@ -14,6 +14,11 @@ export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, 
       <Layout>
             <motion.div
                   exit={{ opacity: 0 }}
+
+                  style={{
+                        overflowX: 'hidden',
+                        overflowY: 'visible'
+                  }}
             >
                   <Hero heading={heading} subheading={subheading} cta={cta} canvas />
                   <Intro {...intro} />

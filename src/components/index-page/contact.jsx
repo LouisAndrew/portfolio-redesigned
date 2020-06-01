@@ -11,10 +11,12 @@ const Container = styled.section`
                 width: 50%;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 840px ) {
                 
                 flex-direction: column;
                 align-items: center;
+
+                padding-bottom: 20% !important;
 
                 & > div {
                         width: fit-content;
@@ -24,12 +26,9 @@ const Container = styled.section`
 
 const Heading = styled.div`
         
-        border-right: 3px solid ${({ theme }) => theme.ft};
-
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 840px ) {
 
                 border-right: none;
-                border-bottom: 3px solid ${({ theme }) => theme.ft};
                 
                 padding-right: 0;
                 padding-bottom: 10%;
@@ -47,16 +46,15 @@ const Contacts = styled.div`
         justify-content: space-evenly;
 
         padding-left: 10%;
-
+/* 
         @media screen and ( max-width: 840px ) {
                 
                 padding-left: 5%;
-        }
+        } */
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 840px ) {
 
                 padding-left: 0;
-                padding-top: 10%;
 
                 align-items: center;
         }

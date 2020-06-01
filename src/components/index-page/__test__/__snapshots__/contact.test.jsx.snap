@@ -2,11 +2,11 @@
 
 exports[`Contact component on landing page matches snapshot 1`] = `
 <section
-  className="sc-AxjAm eYetmd wrap"
+  className="sc-AxjAm hbGWSR wrap"
   id="contact"
 >
   <div
-    className="sc-AxirZ ihFyRX"
+    className="sc-AxirZ yBwaM"
     data-testid="con-heading"
   >
     <h1>
@@ -17,7 +17,7 @@ exports[`Contact component on landing page matches snapshot 1`] = `
     </h1>
   </div>
   <div
-    className="sc-AxiKw WELlT"
+    className="sc-AxiKw eVLDAt"
     data-testid="con-list"
   >
     <div

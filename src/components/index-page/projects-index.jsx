@@ -53,21 +53,23 @@ const Container = styled(motion.div)`
 
                 @media screen and ( max-width: 1100px ) {
                         
-                        transform: scale(.5) translate(50%);
+                        transform: scale(.5) translate(45%, 50%);
                 }
 
                 @media screen and ( max-width: 464px ) {
                         
-                        transform: scale(.3) translate(70%);
+                        transform: scale(.3) translate(65%, -30%);
                         right: -5%;
                         bottom: -7%;
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 840px ) {
                 
                 flex-direction: column;
                 align-items: center;
+                padding-top: 20%;
+                padding-bottom: 20%;
 
                 & > div {
 

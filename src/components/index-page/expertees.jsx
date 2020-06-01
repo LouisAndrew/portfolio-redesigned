@@ -82,7 +82,7 @@ const Item = styled.div`
         @media screen and ( max-width: 840px ) {
 
                 width: 100%;
-                align-items: center;
+                align-items: center !important;
 
                 &:first-child {
 
@@ -112,17 +112,21 @@ const ExpItem = styled.div`
 
         @media screen and ( max-width: 840px ) {
 
-                justify-content: center;
-
+                justify-content: flex-start;
                 margin: 10% 0;
+                width: fit-content;
 
                 img {
 
-                        height: 125px;
-                        width: 125px;
+                        height: 100px;
+                        width: 100px;
 
                         margin-left: 0;
                         margin-right: 10%;
+                }
+
+                p {
+                        padding: 0 5%;
                 }
         }
 
