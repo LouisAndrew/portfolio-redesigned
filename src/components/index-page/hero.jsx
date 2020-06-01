@@ -102,6 +102,11 @@ const Items = styled(motion.div)`
                 position: relative;
         }
 
+        @media screen and ( max-width: 840px ) {
+                
+                p { margin-bottom: 10%; }
+        }
+
         @media screen and ( max-width: 464px ) {
                 
                 width: 100%;
