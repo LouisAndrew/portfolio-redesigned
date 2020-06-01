@@ -26,7 +26,7 @@ const Container = styled.nav`
                 display: none;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
 
                 #menu {
                         display: block;
@@ -65,7 +65,7 @@ const LinkWr = styled.ul`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 position: absolute;
                 bottom: 0;

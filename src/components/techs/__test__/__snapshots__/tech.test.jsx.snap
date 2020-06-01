@@ -2,7 +2,7 @@
 
 exports[`tech small component. matches snapshot 1`] = `
 <div
-  className="sc-AxjAm krZeBP"
+  className="sc-AxjAm bxgiZf"
   data-testid="tech"
   onClick={[Function]}
 />

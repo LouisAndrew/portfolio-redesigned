@@ -29,13 +29,13 @@ const Container = styled.section`
                         bottom: -15%;
                 }
 
-                @media screen and ( max-width: 464px ) {
+                @media screen and ( max-width: 640px ) {
                         
                         bottom: -25%;
                         transform: scale(.6) translateX(-40%);
                 }
 
-                @media screen and ( max-width: 464px ) and ( min-height: 720px ) {
+                @media screen and ( max-width: 640px ) and ( min-height: 720px ) {
                         
                         bottom: -22%;
                 }
@@ -130,7 +130,7 @@ const ExpItem = styled.div`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 img {
 

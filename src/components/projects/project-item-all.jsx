@@ -67,7 +67,7 @@ const Container = styled(motion.div)`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 width: 90%;
 

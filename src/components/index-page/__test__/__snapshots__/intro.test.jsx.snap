@@ -20,7 +20,7 @@ exports[`Intro / about me element on landing page. matches snapshot 1`] = `
     </h1>
   </div>
   <div
-    className="sc-AxirZ hEHatK"
+    className="sc-AxirZ dhjTKK"
     style={
       Object {
         "opacity": 0,

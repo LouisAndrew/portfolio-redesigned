@@ -10,7 +10,7 @@ const Container = styled.div`
         align-self: flex-end;
         padding-top: 5%;
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 padding-top: 15%;
         }

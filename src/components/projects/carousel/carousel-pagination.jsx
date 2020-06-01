@@ -19,7 +19,7 @@ const Circle = styled.div`
                 cursor: pointer;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 height: .6vh;
                 width: .6vh;

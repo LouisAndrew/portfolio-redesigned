@@ -23,7 +23,7 @@ const Container = styled.section`
                 z-index: 1;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 overflow-x: hidden;
                 flex-direction: column;
@@ -107,7 +107,7 @@ const Items = styled(motion.div)`
                 p { margin-bottom: 10%; }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 width: 100%;
                 /* padding-right: 0; */

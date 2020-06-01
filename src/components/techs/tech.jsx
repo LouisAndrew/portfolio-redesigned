@@ -27,7 +27,7 @@ const Container = styled.div`
                 padding-right: 1vh;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 img {
                         height: 1.5vh;

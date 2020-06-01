@@ -20,7 +20,7 @@ const Container = styled.footer`
                         font-size: 16px;
                 }
 
-                @media screen and ( max-width: 464px ) {
+                @media screen and ( max-width: 640px ) {
                         
                         font-size: 14px;
                 }
@@ -46,7 +46,7 @@ const LinkWr = styled.ul`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 padding: 0 0 10%;
                 margin: 10% 0;

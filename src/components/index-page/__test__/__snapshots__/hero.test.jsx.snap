@@ -2,11 +2,11 @@
 
 exports[`Hero component on landing page. matches snapshot 1`] = `
 <section
-  className="sc-AxirZ fxMaFa wrap"
+  className="sc-AxirZ bgxvPK wrap"
   id="particles-js"
 >
   <div
-    className="sc-AxhCb kjAAwy"
+    className="sc-AxhCb gSytiK"
     style={
       Object {
         "opacity": 0,

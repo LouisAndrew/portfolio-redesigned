@@ -148,7 +148,7 @@ const Layout = ({ children }) => {
                         }
                 }
 
-                @media screen and ( max-width: 464px ) {
+                @media screen and ( max-width: 640px ) {
                         
                         h1 {
                                 font-size: 55px;

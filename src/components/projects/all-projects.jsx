@@ -42,7 +42,7 @@ const ProjectCont = styled.div`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
 
                 padding: 20% 0;
                         

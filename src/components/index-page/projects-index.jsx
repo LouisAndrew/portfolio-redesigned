@@ -56,7 +56,7 @@ const Container = styled(motion.div)`
                         transform: scale(.5) translate(45%, 50%);
                 }
 
-                @media screen and ( max-width: 464px ) {
+                @media screen and ( max-width: 640px ) {
                         
                         transform: scale(.3) translate(65%, -30%);
                         right: -5%;
@@ -93,7 +93,7 @@ const Projects = styled.div`
         align-items: flex-start;
         justify-content: space-between;
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
 
                 flex-direction: column;
                 align-items: center;

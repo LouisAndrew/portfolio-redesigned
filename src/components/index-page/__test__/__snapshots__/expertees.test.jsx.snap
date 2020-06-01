@@ -2,7 +2,7 @@
 
 exports[`Expertee component on landing page. matches snapshot 1`] = `
 <section
-  className="sc-AxjAm dAmJxq wrap"
+  className="sc-AxjAm gcFWVG wrap"
 >
   <div
     className="sc-AxirZ fvTqxL"
@@ -26,7 +26,7 @@ exports[`Expertee component on landing page. matches snapshot 1`] = `
       data-testid="exprt-item"
     >
       <div
-        className="sc-AxhCb drovbW"
+        className="sc-AxhCb crpOVK"
       >
         <img
           alt="heading1"
@@ -39,7 +39,7 @@ exports[`Expertee component on landing page. matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxhCb drovbW"
+        className="sc-AxhCb crpOVK"
       >
         <img
           alt="heading2"

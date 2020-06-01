@@ -87,7 +87,7 @@ const CtItem = styled.div`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
 
                 img {
                         height: 8vw;

@@ -13,7 +13,7 @@ const Container = styled.div`
 
         background-color: ${({ theme }) => theme.dark};
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 flex-direction: column-reverse;
 

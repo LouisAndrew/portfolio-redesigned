@@ -26,7 +26,7 @@ const Container = styled.section`
                 padding-top: 15% !important;
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
                 
                 padding-top: 20% !important;
                 ${({ theme }) => theme.center()};
@@ -125,7 +125,7 @@ const ProjectImage = styled.div`
                 }
         }
 
-        @media screen and ( max-width: 464px ) {
+        @media screen and ( max-width: 640px ) {
 
                 margin: 15% 0;
 

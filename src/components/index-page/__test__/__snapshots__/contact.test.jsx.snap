@@ -21,7 +21,7 @@ exports[`Contact component on landing page matches snapshot 1`] = `
     data-testid="con-list"
   >
     <div
-      className="sc-AxhCb cuDfEf"
+      className="sc-AxhCb cdPNdD"
     >
       <img
         alt="social-media"
@@ -32,7 +32,7 @@ exports[`Contact component on landing page matches snapshot 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb cuDfEf"
+      className="sc-AxhCb cdPNdD"
     >
       <img
         alt="social-media"
