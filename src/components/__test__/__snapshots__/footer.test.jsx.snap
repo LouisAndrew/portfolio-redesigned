@@ -9,6 +9,7 @@ exports[`Footer element on every layout renders correctly matches snapshot 1`] =
   >
     <ul
       className="sc-AxirZ ejkNpX"
+      data-testid="links-wrapper"
     >
       <li>
         <a

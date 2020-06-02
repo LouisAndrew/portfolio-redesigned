@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
@@ -52,7 +51,7 @@ const Footer = () => {
 }
 
 const Links = () => (
-        <LinkWrapper>
+        <LinkWrapper data-testid='links-wrapper'>
                 <li>
                         <Link to='/#hero'>
                                 HOME
@@ -75,9 +74,5 @@ const Links = () => (
                 </li>
         </LinkWrapper>
 )
-
-Footer.propTypes = {
-
-}
 
 export default Footer

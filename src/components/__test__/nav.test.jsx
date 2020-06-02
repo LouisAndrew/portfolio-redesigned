@@ -4,33 +4,31 @@ import renderer from 'react-test-renderer'
 
 import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { ThemeProvider } from 'styled-components'
 
-import Footer from '../footer'
+import Nav from '../nav'
 
-describe('Footer element on every layout renders correctly', () => {
+describe('Navigation component on layout', () => {
 
         afterEach( cleanup )
+        const theme = { center: () => { } }
+
+        const renderWithStyles = ui => <ThemeProvider theme={theme}>{ui}</ThemeProvider>
 
         it('renders without crashing', () => {
 
                 const div = document.createElement('div')
-                ReactDOM.render(<Footer />, div)
+                ReactDOM.render( renderWithStyles(<Nav />), div )
         })
 
         it('renders correctly', () => {
 
-                const { getByTestId } = render(<Footer />)
-                const linksWrapper = getByTestId('links-wrapper')
-
-                linksWrapper.childNodes.forEach( node => {
-
-                        expect( node ).toBeInTheDOM()
-                } )
+                const { getByTestId } = render()
         })
 
         it('matches snapshot', () => {
 
-                const tree = renderer.create(<Footer />).toJSON()
+                const tree = renderer.create().toJSON()
                 expect(tree).toMatchSnapshot()
         })
 
