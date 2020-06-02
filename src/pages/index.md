@@ -29,7 +29,7 @@ expertees:
     - h: CAN I
     - h: OFFER?
 contact:
-  heading: GET IN TOUCH!
+  heading: LET'S COLLABORATE
   contactLists:
     - social: email
       value: louisandrew3@gmail.com
@@ -43,7 +43,8 @@ contact:
       icon: assets/call-24px-1.svg
   subheading: " "
   headingList:
-    - h: GET IN
-    - h: TOUCH!
+    - h: LET&aos;S
+    - h: COLLA
+    - h: BORATE
 image: assets/whh_design.svg
 ---
