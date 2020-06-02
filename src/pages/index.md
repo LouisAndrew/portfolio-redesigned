@@ -43,7 +43,7 @@ contact:
       icon: assets/call-24px-1.svg
   subheading: " "
   headingList:
-    - h: LET&aos;S
+    - h: LET&apos;S
     - h: COLLA
     - h: BORATE
 image: assets/whh_design.svg
