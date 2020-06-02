@@ -120,7 +120,7 @@ const Items = styled(motion.div)`
         }
 `
 
-const Hero = React.forwardRef( ({ heading, subheading, cta, canvas }, ref) => {
+const Hero = ({ heading, subheading, cta, canvas }) => {
 
         const navigate = useNavigate()
 
@@ -170,7 +170,7 @@ const Hero = React.forwardRef( ({ heading, subheading, cta, canvas }, ref) => {
         }
 
         return (
-                <Container ref={ref} id='particles-js' className='wrap'>
+                <Container id='particles-js' className='wrap'>
                         { canvas && (
                         <Background 
                                 params={{
@@ -226,7 +226,7 @@ const Hero = React.forwardRef( ({ heading, subheading, cta, canvas }, ref) => {
                         {/* <Laser id='laser' /> */}
                 </Container>
           )
-})
+}
 
 Hero.propTypes = {
 

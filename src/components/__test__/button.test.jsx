@@ -22,10 +22,10 @@ it('renders button correctly', () => {
         expect( getByTestId('button') ).toHaveTextContent(text)
 })
 
-it('matches snapshot', () => {
+// it('matches snapshot', () => {
 
-        const ref = React.createRef()
-        const text = 'Test'
-        const tree = renderer.create( <Button ref={ref}>{text}</Button> ).toJSON()
-        expect(tree).toMatchSnapshot()
-})
+//         const ref = React.createRef()
+//         const text = 'Test'
+//         const tree = renderer.create( <Button ref={ref}>{text}</Button> ).toJSON()
+//         expect(tree).toMatchSnapshot()
+// })

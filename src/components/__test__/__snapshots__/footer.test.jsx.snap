@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer element on every layout renders correctly matches snapshot 1`] = `
+<footer
+  className="sc-AxjAm kAilxx wrap"
+>
+  <div
+    className="wrapper"
+  >
+    <ul
+      className="sc-AxirZ ejkNpX"
+    >
+      <li>
+        <a
+          href="/#hero"
+        >
+          HOME
+        </a>
+      </li>
+      <li>
+        <a
+          href="/#about"
+        >
+          ABOUT
+        </a>
+      </li>
+      <li>
+        <a
+          href="/#contact"
+        >
+          CONTACT
+        </a>
+      </li>
+      <li>
+        <a
+          href="/projects"
+        >
+          PROJECTS
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+`;
