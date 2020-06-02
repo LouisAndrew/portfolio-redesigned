@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact component on landing page matches snapshot 1`] = `
+<div
+  className="sc-AxjAm gSdOcq wrap"
+>
+  <div
+    className="sc-AxirZ rxCVo"
+    data-testid="left"
+  >
+    <div
+      className="contact"
+    >
+      <img
+        alt="email"
+        data-testid="ctc-img-0"
+        src="/asset/mock.png"
+      />
+      <p
+        data-testid="ctc-p-0"
+      >
+        mock@mock.com
+      </p>
+    </div>
+  </div>
+  <div
+    className="sc-AxiKw fAwVwF"
+    data-testid="right"
+  >
+    <div
+      className="heading"
+    >
+      <h1>
+        Mock
+      </h1>
+      <h1>
+        Text
+      </h1>
+    </div>
+  </div>
+</div>
+`;

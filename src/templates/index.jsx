@@ -6,8 +6,9 @@ import { motion } from 'framer-motion'
 import Hero from '../components/index-page/hero'
 import Layout from '../components/layout'
 import Expertees from '../components/index-page/expertees'
-import Contact from '../components/index-page/contact'
+// import Contact from '../components/index-page/contact'
 import ProjectShowcase from '../components/index-page/projects-index'
+import Contact from '../components/index-page/contact-rd'
 import Intro from '../components/index-page/intro'
 
 export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, contact, intro }) => (
@@ -21,9 +22,9 @@ export const IndexPageTemplate = ({ title, heading, subheading, cta, expertees, 
                   }}
             >
                   <Hero heading={heading} subheading={subheading} cta={cta} canvas />
-                  <Intro {...intro} />
                   <Expertees {...expertees} />
                   <ProjectShowcase />
+                  <Intro {...intro} />
                   <Contact {...contact} />
             </motion.div>
       </Layout>
