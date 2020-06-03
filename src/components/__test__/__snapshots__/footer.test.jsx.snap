@@ -2,13 +2,23 @@
 
 exports[`Footer element on every layout renders correctly matches snapshot 1`] = `
 <footer
-  className="sc-AxjAm eQrFEs wrap"
+  className="sc-AxjAm hPVbPT wrap"
 >
   <div
     className="wrapper"
   >
+    <div
+      className="lower"
+    >
+      <test-file-stub
+        id="logo-footer"
+      />
+      <p>
+        Built with Gatsby, Netlify CMS and ❤
+      </p>
+    </div>
     <ul
-      className="sc-AxirZ ejkNpX"
+      className="sc-AxirZ gAUalI"
       data-testid="links-wrapper"
     >
       <li>

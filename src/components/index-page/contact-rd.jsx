@@ -18,6 +18,10 @@ const Container = styled.div`
 
                         width: 100%;
 
+                        &:last-child {
+                                margin-bottom: 5vh;
+                        }
+
                         li {
                                 margin: 10% 0;
                         }
