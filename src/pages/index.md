@@ -5,8 +5,10 @@ heading: Hello.
 subheading: Front ent developer, at your service 🙌
 cta: check my projects.
 intro:
-  desc: I am a computer science student at HTW Berlin. I am really passionate in
-    building beautiful and fast web applications.
+  desc: Hi I'm Louis, a computer science student at HTW Berlin. I am really
+    passionate in building beautiful and fully functional web applications. I
+    could help turn your ideas into reality using modern technologies and design
+    trends
   heading: WHO AM I?
   image: assets/1525702203099_edited-2.png
   headingList:
@@ -41,7 +43,7 @@ contact:
       link: " "
       redirect: false
       icon: assets/call-24px-1.svg
-  subheading: " "
+  subheading: "Got any question or just wanna say hi? You could contact me anytime. "
   headingList:
     - h: LET'S
     - h: COLLA
