@@ -2,7 +2,7 @@
 
 exports[`Footer element on every layout renders correctly matches snapshot 1`] = `
 <footer
-  className="sc-AxjAm kAilxx wrap"
+  className="sc-AxjAm eQrFEs wrap"
 >
   <div
     className="wrapper"

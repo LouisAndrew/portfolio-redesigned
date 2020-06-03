@@ -22,7 +22,8 @@ describe('Contact component on landing page', () => {
                                 icon: 'asset/mock.png',
                                 value: 'mock@mock.com',
                         }
-                ]
+                ],
+                subheading: 'alwjlajdajdamdkasdlaw'
         }
 
         it('renders without crashing', () => {
@@ -33,12 +34,12 @@ describe('Contact component on landing page', () => {
 
         it('renders image correctly', () => {
 
-                const { getByTestId } = render( <Contact {...mock} /> )
+                const { getByTestId, getAllByTestId } = render( <Contact {...mock} /> )
 
-                const leftDiv = getByTestId('left')
+                const contact = getAllByTestId('ctc')
 
                 // test images left div items!
-                leftDiv.childNodes.forEach( (parentNode, i) => {
+                contact.forEach( (parentNode, i) => {
 
                         const actualImg = getByTestId(`ctc-img-${i}`)
                         expect( actualImg ).toHaveAttribute('src', `/${mock.contactLists[i].icon}`)
@@ -48,17 +49,31 @@ describe('Contact component on landing page', () => {
 
         it('renders contact value correctly', () => {
 
-                const { getByTestId } = render( <Contact {...mock} /> )
+                const { getAllByTestId, getByTestId } = render( <Contact {...mock} /> )
 
-                const leftDiv = getByTestId('left')
+                const contact = getAllByTestId('ctc')
 
                 // test images left div items!
-                leftDiv.childNodes.forEach( (parentNode, i) => {
+                contact.forEach( (parentNode, i) => {
 
                         const actualPar = getByTestId(`ctc-p-${i}`)
                         expect( actualPar ).toHaveTextContent( mock.contactLists[i].value )
                 } )
         })
+
+        it('renders subheading correctly', () => {
+
+                const { getByTestId } = render( <Contact {...mock} /> )
+
+                const leftDiv = getByTestId('left')
+
+                leftDiv.childNodes.forEach( child => {
+
+                        if ( child.nodeName === 'P' ) 
+                                expect( child ).toHaveTextContent( mock.subheading )
+                } )
+        })
+
         it('renders heading correctly', () => {
 
                 const { getByTestId } = render( <Contact {...mock} /> )

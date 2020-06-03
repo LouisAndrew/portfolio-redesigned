@@ -33,6 +33,10 @@ const Container = styled.div`
 `
 
 const Left = styled.div`
+
+        p {
+                padding-right: 30%;
+        }
         
         .contact {
 
@@ -67,14 +71,15 @@ const Right = styled.div`
         }
 `
 
-const Contact = ({ contactLists, headingList }) => {
+const Contact = ({ contactLists, headingList, subheading }) => {
 
         return (
                 <Container className='wrap'>
                         <Left data-testid='left'>
+                                <p>{subheading}</p>
                                 {
                                         contactLists.map( (ctc, i) => (
-                                                <div key={ctc.social} className="contact">
+                                                <div data-testid='ctc' key={ctc.social} className="contact">
                                                         <img data-testid={`ctc-img-${i}`} src={`/${ctc.icon}`} alt={ctc.social} />
                                                         <p data-testid={`ctc-p-${i}`}>{ctc.value}</p>
                                                 </div>

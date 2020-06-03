@@ -5,11 +5,15 @@ exports[`Contact component on landing page matches snapshot 1`] = `
   className="sc-AxjAm gSdOcq wrap"
 >
   <div
-    className="sc-AxirZ rxCVo"
+    className="sc-AxirZ imJGCN"
     data-testid="left"
   >
+    <p>
+      alwjlajdajdamdkasdlaw
+    </p>
     <div
       className="contact"
+      data-testid="ctc"
     >
       <img
         alt="email"

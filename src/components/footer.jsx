@@ -7,14 +7,7 @@ const Container = styled.footer`
         background-color: ${({ theme }) => theme.dark};
 
         .wrapper {
-                border: 2px solid ${({ theme }) => theme.ft};
-                border-radius: 6px;
-                padding: 5% 2%;
 
-                @media screen and ( max-width: 640px ) {
-                        
-                        padding: 5% 10%;
-                }
         }
 `
 
