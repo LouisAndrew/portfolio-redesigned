@@ -11,12 +11,13 @@ const Container = styled.ul`
         display: flex;
         justify-content: center;
 
-        h3 {
+        /* h3 {
+                font-weight: bold;
 
                 &:hover {
                         cursor: pointer;
                 }
-        }
+        } */
 `
 
 const PageLink = styled.li`
@@ -26,6 +27,9 @@ const PageLink = styled.li`
         transition: .2s;
         color: ${({ theme }) => theme.ft};
         background-color: ${props => props.$active && props.theme.red};
+
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
 
         &:hover {
 
@@ -72,7 +76,7 @@ const Pagination = ({ pageNum, store, perPage, navigatePage }) => {
                 <Container>
                         {
                                 links.length > 0 ? (
-                                        links.map( (link, i) => <PageLink onClick={() => navigatePage(link)} key={i} $active={link === pageNum}>{link}</PageLink> )
+                                        links.map( (link, i) => <PageLink onClick={() => navigatePage(link)} key={link} $active={link === pageNum}>{link}</PageLink> )
                                 ) : (
                                         <Button onClick={() => navigatePage(1)} bColor='blue' color='ft'>Go Back</Button>
                                 )

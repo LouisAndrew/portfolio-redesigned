@@ -38,8 +38,11 @@ const Container = styled.div`
 
 const Left = styled.div`
 
-        p {
+        h3 {
                 padding-right: 30%;
+
+                font-family: 'Open Sans', sans-serif !important;
+                font-weight: bold;
         }
         
         .contact {
@@ -47,7 +50,7 @@ const Left = styled.div`
                 display: flex;
                 align-items: center;
 
-                margin: 10% 0;
+                margin: 5% 0;
 
                 img {   
                         height: 50px;
@@ -78,9 +81,9 @@ const Right = styled.div`
 const Contact = ({ contactLists, headingList, subheading }) => {
 
         return (
-                <Container className='wrap'>
+                <Container id='contact' className='wrap'>
                         <Left data-testid='left'>
-                                <p>{subheading}</p>
+                                <h3>{subheading}</h3>
                                 {
                                         contactLists.map( (ctc, i) => (
                                                 <div data-testid='ctc' key={ctc.social} className="contact">
@@ -111,6 +114,12 @@ Contact.propTypes = {
                         h: PropTypes.string,
                 }),
         ).isRequired,
+        subheading: PropTypes.string,
+}
+
+Contact.defaultProps = {
+
+        subheading: ''
 }
 
 export default Contact

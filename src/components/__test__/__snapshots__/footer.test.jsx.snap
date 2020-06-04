@@ -2,7 +2,7 @@
 
 exports[`Footer element on every layout renders correctly matches snapshot 1`] = `
 <footer
-  className="sc-AxjAm hPVbPT wrap"
+  className="sc-AxjAm dvTUIA wrap"
 >
   <div
     className="wrapper"
@@ -18,7 +18,7 @@ exports[`Footer element on every layout renders correctly matches snapshot 1`] =
       </p>
     </div>
     <ul
-      className="sc-AxirZ gAUalI"
+      className="sc-AxirZ loyvgs"
       data-testid="links-wrapper"
     >
       <li>
