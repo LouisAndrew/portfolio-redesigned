@@ -17,9 +17,7 @@ techUsed:
   - NextJS
   - ReactJS
   - Styled-Components
-desc: 'Die Passage "Lorem ipsum ..." stammt aus folgendem Text: "Neque porro
-  quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-  velit ...". Dieser lässt sich wie folgt übersetzen: Es gibt niemanden, der den
-  Schmerz selbst liebt, der ihn sucht und haben will, einfach, weil es Schmerz
-  ist."Apr 17, 2018'
+desc: A simple website to show some information about beers. The beers details
+  were being fetched from Punk API https://punkapi.com/. Took inspirations from
+  lots of e-commerce websites, but without the order/buy functionality
 ---
