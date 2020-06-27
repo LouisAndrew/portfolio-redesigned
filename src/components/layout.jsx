@@ -1,49 +1,48 @@
-import React from 'react'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import { AnimatePresence } from 'framer-motion'
+import React from "react"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
+import { AnimatePresence } from "framer-motion"
 
-import useGoogleFonts from '../hooks/useGoogleFonts'
-import Nav from './nav'
+import useGoogleFonts from "../hooks/useGoogleFonts"
+import Nav from "./nav"
 // import Footer from './footer'
-import Footer from './footer'
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
+  const filterColor = (colors, id) =>
+    colors.filter(color => color.colorID === id)[0].colorHex
 
-        const filterColor = (colors, id) => colors.filter( color => color.colorID === id )[0].colorHex
+  const data = useStaticQuery(graphql`
+    query ThemeQuery {
+      markdownRemark(frontmatter: { templateKey: { eq: "theme" } }) {
+        frontmatter {
+          themeColors {
+            colorHex
+            colorID
+          }
+        }
+      }
+    }
+  `)
 
-        const  data = useStaticQuery( graphql`
-                query ThemeQuery {
-                        markdownRemark(frontmatter: {templateKey: {eq: "theme"}}) {
-                                frontmatter {
-                                        themeColors {
-                                                colorHex
-                                                colorID
-                                        }
-                                }
-                        }
-                }
-        ` )
+  const { themeColors } = data.markdownRemark.frontmatter
 
-        const { themeColors } = data.markdownRemark.frontmatter
+  const theme = {
+    bg: filterColor(themeColors, "bg"),
+    ft: filterColor(themeColors, "ft"),
+    dark: filterColor(themeColors, "dark"),
+    red: filterColor(themeColors, "red"),
+    blue: filterColor(themeColors, "blue"),
 
-        const theme = {
-
-                bg: filterColor( themeColors, 'bg' ),
-                ft: filterColor( themeColors, 'ft' ),
-                dark: filterColor( themeColors, 'dark' ),
-                red: filterColor( themeColors, 'red' ),
-                blue: filterColor( themeColors, 'blue' ),
-
-                center: () => (`
+    center: () => `
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                `)
-        }
+                `,
+  }
 
-        const Global = createGlobalStyle`
+  const Global = createGlobalStyle`
 
                 * {
                         padding: 0;
@@ -60,13 +59,13 @@ const Layout = ({ children }) => {
                         }
 
                         &::-webkit-scrollbar-track {
-                                background-color: ${ theme.bg };
+                                background-color: ${theme.bg};
                         }
 
                         &::-webkit-scrollbar-thumb {
 
                                 width: 80%;
-                                background-color: ${ theme.dark };
+                                background-color: ${theme.dark};
                                 border-radius: 8px;
                                 opacity: .6;
                         }
@@ -172,27 +171,26 @@ const Layout = ({ children }) => {
                 }
         `
 
-        useGoogleFonts()
+  useGoogleFonts()
 
-        return (
-                <>
-                        <Global />
-                        <ThemeProvider theme={theme}>
-                                <main>
-                                        <AnimatePresence exitBeforeEnter>
-                                                <Nav />
-                                                { children }
-                                                <Footer />
-                                        </AnimatePresence>
-                                </main>
-                        </ThemeProvider>
-                </>
-        )
+  return (
+    <>
+      <Global />
+      <ThemeProvider theme={theme}>
+        <main>
+          <AnimatePresence exitBeforeEnter>
+            <Nav />
+            {children}
+            <Footer />
+          </AnimatePresence>
+        </main>
+      </ThemeProvider>
+    </>
+  )
 }
 
 Layout.propTypes = {
-
-        children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
