@@ -3,8 +3,8 @@ templateKey: projects
 title: BLONDIG
 projectName: Blondig
 lastUpdated: 2020-06-27T10:29:16.529Z
-gitRepo: https://github.com/LouisAndrew/Blondig
-siteName: https://awesome-morse-153650.netlify.app/
+gitRepo: github.com/LouisAndrew/Blondig
+siteName: awesome-morse-153650.netlify.app/
 preview:
   - assets/2020-06-27.png
   - assets/2020-06-27-4-.png
