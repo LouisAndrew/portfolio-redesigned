@@ -5,7 +5,11 @@ projectName: Blondig
 lastUpdated: 2020-06-27T10:29:16.529Z
 gitRepo: https://github.com/LouisAndrew/Blondig
 siteName: https://awesome-morse-153650.netlify.app/
-snapshot: assets/2020-05-21-2-.png
+preview:
+  - assets/2020-06-27.png
+  - assets/2020-06-27-4-.png
+  - assets/2020-06-27-3-.png
+snapshot: assets/screenshot-7-.png
 projColor: "#EF6540"
 techUsed:
   - HTML5
