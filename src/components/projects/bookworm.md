@@ -19,10 +19,9 @@ techUsed:
   - NextJS
   - ReactJS
   - Styled-Components
-desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+desc: "A little social media app, where user can search for a book post comments
+  / review about the book. The book details and information are fetched from the
+  Google Books API https://developers.google.com/books. In addition to that user
+  can also create some kind of to-read-list to keep track of books he/she wants
+  to read "
 ---
