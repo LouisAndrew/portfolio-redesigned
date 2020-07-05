@@ -17,6 +17,7 @@ techUsed:
   - ReactJS
   - Styled-Components
   - Javascript
+  - Gatsby JS
 desc: "Simple e-commerce website to showcase products from a small clothing
   business in Indonesia. The website has no direct purchase functionality as it
   is intended to redirect users visiting the website to go their Tokopedia site
